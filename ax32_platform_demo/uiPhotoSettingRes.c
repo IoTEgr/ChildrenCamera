@@ -24,7 +24,7 @@ static widgetCreateInfor photoSettingWin[] =
         createRect(ITEM_WM_ID, Rx(0 + 40), Ry(0 + 25), Rw(240), Rh(160), R_COLOR_GRAY),
         createStringIcon(ITEM_TITTLE_ID, Rx(10 + 40), Ry(0 + 25), Rw(100), Rh(30), R_ID_STR_IoTEgr_001, ALIGNMENT_LEFT, R_COLOR_WHITE, 0),
         createItemManage(ITEM_SELECT_ID, Rx(10 + 40), Ry(30 + 25), Rw(220), Rh(120), R_COLOR_TRANSFER),
-        createImageIcon(ITEM_ICON_FILTERNT_ID, Rx(0 + 40 + 30), Ry(160 + 35), Rw(32), Rh(32), R_ID_ICON_FILTERNTON, ALIGNMENT_CENTER),
+        createImageIcon(ITEM_ICON_FILTERNT_ID, Rx(0 + 40 + 30), Ry(160 + 35), Rw(32), Rh(32), R_ID_ICON_FILTERNT, ALIGNMENT_CENTER),
         createImageIcon(ITEM_ICON_IMAGENT_ID, Rx(35 + 40 + 30), Ry(160 + 35), Rw(32), Rh(32), R_ID_ICON_IMAGENT, ALIGNMENT_CENTER),
         createImageIcon(ITEM_ICON_MPHOTOSNT_ID, Rx(70 + 40 + 30), Ry(160 + 35), Rw(32), Rh(32), R_ID_ICON_MPHOTOSNT, ALIGNMENT_CENTER),
         createImageIcon(ITEM_ICON_SELFIENT_ID, Rx(105 + 40 + 30), Ry(160 + 35), Rw(32), Rh(32), R_ID_ICON_SELFIENT, ALIGNMENT_CENTER),

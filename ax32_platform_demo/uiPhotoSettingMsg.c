@@ -3,13 +3,29 @@
 
 #define currentPage() (currentMenu->pPage[currentMenu->curPage])
 #define getItem(n) (currentPage().pItem[n])
+#define TOTAL_PAGE 5
+extern MENU(PSmovie);
+
 static menu *currentMenu = NULL;
 static menuItem *currentItem = NULL;
 static bool photoSettingOpened = false;
-static u8_t currentPageIndex = 1;
+static u8_t photoSettingCurrentPageIndex = 1;
 static u8 *menuitem_bk_buf = NULL;
-
-extern MENU(PSmovie);
+static u8 photoSettingPageIconFlag[TOTAL_PAGE] = {0};
+static const struct
+{
+    uint32_t titleRes;
+    uint32_t activeIconRes;
+    uint16_t activeItemID;
+    uint32_t configId;
+} photoSettingPageConfig[] = {
+    [0] = {0}, // 占位符
+    {R_ID_STR_IoTEgr_001, R_ID_ICON_FILTERNTON, ITEM_ICON_FILTERNT_ID, CONFIG_ID_PS_LENS},
+    {R_ID_STR_IoTEgr_002, R_ID_ICON_IMAGENTON, ITEM_ICON_IMAGENT_ID, CONFIG_ID_PRESLUTION},
+    {R_ID_STR_IoTEgr_003, R_ID_ICON_MPHOTOSNTON, ITEM_ICON_MPHOTOSNT_ID, CONFIG_ID_CONTINUOUS_SHOOTING},
+    {R_ID_STR_IoTEgr_004, R_ID_ICON_SELFIENTON, ITEM_ICON_SELFIENT_ID, CONFIG_ID_TIMEPHOTO},
+    {R_ID_STR_SET_SETTING, R_ID_ICON_SETTINGSNTON, ITEM_ICON_SETTINGSNT_ID, CONFIG_ID_MAX},
+};
 
 bool photoSettingIsOpen(void)
 {
@@ -22,52 +38,15 @@ static uint32 getOptionResInfor(uint32 item, uint32 *image, uint32 *str)
     if (str)
         *str = currentItem->pOption[item].str;
 }
-void configIdChange()
+void photoSettingConfigIdChange(winHandle handle)
 {
-    switch (currentPageIndex)
-    {
-    case 1:
-        currentItem->configId = CONFIG_ID_PS_LENS;
-        break;
-    case 2:
-        currentItem->configId = CONFIG_ID_PRESLUTION;
-        break;
-    case 3:
-        currentItem->configId = CONFIG_ID_CONTINUOUS_SHOOTING;
-        break;
-    case 4:
-        currentItem->configId = CONFIG_ID_TIMEPHOTO;
-        break;
-    }
+    currentItem = &getItem(itemManageGetCurrentItem(winItem(handle, ITEM_SELECT_ID)));
+    currentItem->configId = photoSettingPageConfig[photoSettingCurrentPageIndex].configId;
 }
-void getItemPosition(winHandle handle)
+void photoSettingGetItemPosition(winHandle handle)
 {
-    uint32 itemNum = 0, config, configId;
-    if (currentPageIndex == 5)
-    {
-        itemManageSetCharInfor(winItem(handle, ITEM_SELECT_ID), 0, ALIGNMENT_LEFT, R_COLOR_WHITE);
-        return;
-    }
-    else
-    {
-        itemManageSetCharInfor(winItem(handle, ITEM_SELECT_ID), 0, ALIGNMENT_CENTER, R_COLOR_WHITE);
-        switch (currentPageIndex)
-        {
-        case 1:
-            configId = CONFIG_ID_PS_LENS;
-            break;
-        case 2:
-            configId = CONFIG_ID_PRESLUTION;
-            break;
-        case 3:
-            configId = CONFIG_ID_CONTINUOUS_SHOOTING;
-            break;
-        case 4:
-            configId = CONFIG_ID_TIMEPHOTO;
-            break;
-        }
-    }
-    config = configGet(configId);
+    uint32 itemNum = 0, config;
+    config = configGet(photoSettingPageConfig[photoSettingCurrentPageIndex].configId);
     itemNum = 0;
     while (itemNum < currentPage().itemSum)
     {
@@ -78,69 +57,13 @@ void getItemPosition(winHandle handle)
     if (itemNum >= currentPage().itemSum)
         itemNum = 0;
     currentItem = &getItem(itemNum);
-    configIdChange();
     itemManageSetCurItem(winItem(handle, ITEM_SELECT_ID), itemNum);
     winSetResid(winItem(handle, ITEM_MODE_ID), currentPage().selectImage);
 }
-void pageChange(winHandle handle)
+void photoSettingPageChange(winHandle handle)
 {
-    currentMenu->curPage = currentPageIndex - 1;
-    itemManageUpdateRes(winItem(handle, ITEM_SELECT_ID), currentPage().itemSum, ((itemManageObj *)uiHandleToPtr(handle))->currentRes);
-    getItemPosition(handle);
-
-    switch (currentPageIndex)
-    {
-    case 1:
-    {
-        winSetResid(winItem(handle, ITEM_TITTLE_ID), R_ID_STR_IoTEgr_001);
-        winSetResid(winItem(handle, ITEM_ICON_FILTERNT_ID), R_ID_ICON_FILTERNTON);
-        winSetResid(winItem(handle, ITEM_ICON_IMAGENT_ID), R_ID_ICON_IMAGENT);
-        winSetResid(winItem(handle, ITEM_ICON_MPHOTOSNT_ID), R_ID_ICON_MPHOTOSNT);
-        winSetResid(winItem(handle, ITEM_ICON_SELFIENT_ID), R_ID_ICON_SELFIENT);
-        winSetResid(winItem(handle, ITEM_ICON_SETTINGSNT_ID), R_ID_ICON_SETTINGSNT);
-    }
-    break;
-    case 2:
-    {
-        winSetResid(winItem(handle, ITEM_TITTLE_ID), R_ID_STR_IoTEgr_002);
-        winSetResid(winItem(handle, ITEM_ICON_FILTERNT_ID), R_ID_ICON_FILTERNT);
-        winSetResid(winItem(handle, ITEM_ICON_IMAGENT_ID), R_ID_ICON_IMAGENTON);
-        winSetResid(winItem(handle, ITEM_ICON_MPHOTOSNT_ID), R_ID_ICON_MPHOTOSNT);
-        winSetResid(winItem(handle, ITEM_ICON_SELFIENT_ID), R_ID_ICON_SELFIENT);
-        winSetResid(winItem(handle, ITEM_ICON_SETTINGSNT_ID), R_ID_ICON_SETTINGSNT);
-    }
-    break;
-    case 3:
-    {
-        winSetResid(winItem(handle, ITEM_TITTLE_ID), R_ID_STR_IoTEgr_003);
-        winSetResid(winItem(handle, ITEM_ICON_FILTERNT_ID), R_ID_ICON_FILTERNT);
-        winSetResid(winItem(handle, ITEM_ICON_IMAGENT_ID), R_ID_ICON_IMAGENT);
-        winSetResid(winItem(handle, ITEM_ICON_MPHOTOSNT_ID), R_ID_ICON_MPHOTOSNTON);
-        winSetResid(winItem(handle, ITEM_ICON_SELFIENT_ID), R_ID_ICON_SELFIENT);
-        winSetResid(winItem(handle, ITEM_ICON_SETTINGSNT_ID), R_ID_ICON_SETTINGSNT);
-    }
-    break;
-    case 4:
-    {
-        winSetResid(winItem(handle, ITEM_TITTLE_ID), R_ID_STR_IoTEgr_004);
-        winSetResid(winItem(handle, ITEM_ICON_FILTERNT_ID), R_ID_ICON_FILTERNT);
-        winSetResid(winItem(handle, ITEM_ICON_IMAGENT_ID), R_ID_ICON_IMAGENT);
-        winSetResid(winItem(handle, ITEM_ICON_MPHOTOSNT_ID), R_ID_ICON_MPHOTOSNT);
-        winSetResid(winItem(handle, ITEM_ICON_SELFIENT_ID), R_ID_ICON_SELFIENTON);
-        winSetResid(winItem(handle, ITEM_ICON_SETTINGSNT_ID), R_ID_ICON_SETTINGSNT);
-    }
-    break;
-    case 5:
-    {
-        winSetResid(winItem(handle, ITEM_TITTLE_ID), R_ID_STR_SET_SETTING);
-        winSetResid(winItem(handle, ITEM_ICON_FILTERNT_ID), R_ID_ICON_FILTERNT);
-        winSetResid(winItem(handle, ITEM_ICON_IMAGENT_ID), R_ID_ICON_IMAGENT);
-        winSetResid(winItem(handle, ITEM_ICON_MPHOTOSNT_ID), R_ID_ICON_MPHOTOSNT);
-        winSetResid(winItem(handle, ITEM_ICON_SELFIENT_ID), R_ID_ICON_SELFIENT);
-        winSetResid(winItem(handle, ITEM_ICON_SETTINGSNT_ID), R_ID_ICON_SETTINGSNTON);
-    }
-    break;
-    }
+    winDestroy(&handle);
+    uiOpenWindow(&photoSettingWindow, 2, &MENU(PSmovie), photoSettingCurrentPageIndex);
 }
 static uint32 getItemResInfor(uint32 item, uint32 *image, uint32 *str)
 {
@@ -219,7 +142,7 @@ static int menuItemKeyMsgOk(winHandle handle, uint32 parameNum, uint32 *parame)
         keyState = parame[0];
     if (keyState == KEY_PRESSED)
     {
-        if (currentPageIndex == 5)
+        if (photoSettingCurrentPageIndex == 5)
         {
             pItem = &getItem(itemManageGetCurrentItem(winItem(handle, ITEM_SELECT_ID)));
             if (pItem->optionSum == 0)
@@ -250,8 +173,7 @@ static int menuItemKeyMsgUp(winHandle handle, uint32 parameNum, uint32 *parame)
     if (keyState == KEY_PRESSED || keyState == KEY_CONTINUE)
     {
         itemManagePreItem(winItem(handle, ITEM_SELECT_ID));
-        currentItem = &getItem(itemManageGetCurrentItem(winItem(handle, ITEM_SELECT_ID)));
-        configIdChange();
+        photoSettingConfigIdChange(handle);
     }
     return 0;
 }
@@ -263,8 +185,7 @@ static int menuItemKeyMsgDown(winHandle handle, uint32 parameNum, uint32 *parame
     if (keyState == KEY_PRESSED || keyState == KEY_CONTINUE)
     {
         itemManageNextItem(winItem(handle, ITEM_SELECT_ID));
-        currentItem = &getItem(itemManageGetCurrentItem(winItem(handle, ITEM_SELECT_ID)));
-        configIdChange();
+        photoSettingConfigIdChange(handle);
     }
     return 0;
 }
@@ -275,25 +196,8 @@ static int menuItemKeyMsgMenu(winHandle handle, uint32 parameNum, uint32 *parame
         keyState = parame[0];
     if (keyState == KEY_PRESSED)
     {
-        if (currentPageIndex > 1)
-        {
-            if (currentPageIndex == 5)
-            {
-                winDestroy(&handle);
-                uiOpenWindow(&photoSettingWindow, 2, &MENU(PSmovie), 4);
-                return 0;
-            }
-            currentPageIndex--;
-        }
-        else
-            currentPageIndex = 5;
-        if (currentPageIndex == 5)
-        {
-            winDestroy(&handle);
-            uiOpenWindow(&photoSettingWindow, 2, &MENU(PSmovie), 5);
-            return 0;
-        }
-        pageChange(handle);
+        photoSettingCurrentPageIndex = (photoSettingCurrentPageIndex + TOTAL_PAGE - 2) % TOTAL_PAGE + 1;
+        photoSettingPageChange(handle);
     }
     return 0;
 }
@@ -304,23 +208,8 @@ static int menuItemKeyMsgMode(winHandle handle, uint32 parameNum, uint32 *parame
         keyState = parame[0];
     if (keyState == KEY_PRESSED)
     {
-        if (currentPageIndex < 5)
-        {
-            if (currentPageIndex == 4)
-            {
-                winDestroy(&handle);
-                uiOpenWindow(&photoSettingWindow, 2, &MENU(PSmovie), 5);
-                return 0;
-            }
-            currentPageIndex++;
-        }
-        else
-        {
-            winDestroy(&handle);
-            uiOpenWindow(&photoSettingWindow, 2, &MENU(PSmovie), 1);
-            return 0;
-        }
-        pageChange(handle);
+        photoSettingCurrentPageIndex = photoSettingCurrentPageIndex % TOTAL_PAGE + 1;
+        photoSettingPageChange(handle);
     }
     return 0;
 }
@@ -351,31 +240,27 @@ static int menuItemOpenWin(winHandle handle, uint32 parameNum, uint32 *parame)
     }
     deg_Printf("menuItem Open Win!!!\n");
     currentMenu = (menu *)parame[0];
+    photoSettingCurrentPageIndex = parame[1];
+    currentMenu->curPage = photoSettingCurrentPageIndex - 1;
+    itemManageSetItemHeight(winItem(handle, ITEM_SELECT_ID), R1h(35));
     if (parame[1] == 5)
     {
-        currentPageIndex = 5;
-        currentMenu->curPage = 5;
-        currentItem = &getItem(0);
-        itemManageSetItemHeight(winItem(handle, ITEM_SELECT_ID), R1h(35));
         itemManageCreateItem(winItem(handle, ITEM_SELECT_ID), itemCreateMenuItemEx, NULL, currentPage().itemSum);
         itemManageSetResInforFuncEx(winItem(handle, ITEM_SELECT_ID), getItemResInforEx);
-        itemManageSetSelectColor(winItem(handle, ITEM_SELECT_ID), /*R_COLOR_BLUE1*/ R_COLOR_YELLOW);
-        itemManageSetUnselectColor(winItem(handle, ITEM_SELECT_ID), /*R_COLOR_GRAY*/ R_COLOR_TRANSFER);
-        getItemPosition(handle);
+        itemManageSetCharInfor(winItem(handle, ITEM_SELECT_ID), 0, ALIGNMENT_LEFT, R_COLOR_WHITE);
+        itemManageNextItem(winItem(handle, ITEM_SELECT_ID));
     }
     else
     {
-        currentPageIndex = parame[1];
-        currentMenu->curPage = parame[1] - 1;
-        currentItem = &getItem(0);
-        itemManageSetItemHeight(winItem(handle, ITEM_SELECT_ID), R1h(35));
         itemManageCreateItem(winItem(handle, ITEM_SELECT_ID), itemCreateMenuItem, getItemResInfor, currentPage().itemSum);
-        // itemManageSetResInforFuncEx(winItem(handle, ITEM_SELECT_ID), );
-        itemManageSetSelectColor(winItem(handle, ITEM_SELECT_ID), /*R_COLOR_BLUE1*/ R_COLOR_YELLOW);
-        itemManageSetUnselectColor(winItem(handle, ITEM_SELECT_ID), /*R_COLOR_GRAY*/ R_COLOR_TRANSFER);
-        getItemPosition(handle);
+        itemManageSetCharInfor(winItem(handle, ITEM_SELECT_ID), 0, ALIGNMENT_CENTER, R_COLOR_WHITE);
+        photoSettingGetItemPosition(handle);
     }
-    pageChange(handle);
+    itemManageSetSelectColor(winItem(handle, ITEM_SELECT_ID), R_COLOR_YELLOW);
+    itemManageSetUnselectColor(winItem(handle, ITEM_SELECT_ID), R_COLOR_TRANSFER);
+    winSetResid(winItem(handle, ITEM_TITTLE_ID), photoSettingPageConfig[photoSettingCurrentPageIndex].titleRes);
+    winSetResid(winItem(handle, photoSettingPageConfig[photoSettingCurrentPageIndex].activeItemID),
+                photoSettingPageConfig[photoSettingCurrentPageIndex].activeIconRes);
     return 0;
 }
 static int menuItemCloseWin(winHandle handle, uint32 parameNum, uint32 *parame)
