@@ -1,0 +1,303 @@
+#include "application.h"
+#include "uiWin.h"
+#include "menu.h"
+
+extern char version_str[32];
+
+MENU_OPTION_START(PSvidResolution) //---------视频分辨率
+MENU_OPTION_STR(R_ID_STR_RES_VGA)
+MENU_OPTION_STR(R_ID_STR_RES_720P_SHORT)
+MENU_OPTION_STR(R_ID_STR_RES_1080P_SHORT)
+MENU_OPTION_END()
+
+MENU_OPTION_START(PSlensFilter) //---------滤镜
+MENU_OPTION_STR(R_ID_STR_IoTEgr_005)
+MENU_OPTION_STR(R_ID_STR_IoTEgr_006)
+MENU_OPTION_STR(R_ID_STR_IoTEgr_007)
+MENU_OPTION_STR(R_ID_STR_IoTEgr_008)
+MENU_OPTION_END()
+
+MENU_OPTION_START(PSphotoResolution) //--------- 照片分辨率
+MENU_OPTION_STR(R_ID_STR_RES_48M)
+MENU_OPTION_STR(R_ID_STR_RES_40M)
+MENU_OPTION_STR(R_ID_STR_RES_24M)
+MENU_OPTION_STR(R_ID_STR_RES_20M)
+MENU_OPTION_STR(R_ID_STR_RES_18M)
+MENU_OPTION_STR(R_ID_STR_RES_16M)
+MENU_OPTION_STR(R_ID_STR_RES_12M)
+MENU_OPTION_STR(R_ID_STR_RES_10M)
+MENU_OPTION_STR(R_ID_STR_RES_8M)
+MENU_OPTION_STR(R_ID_STR_RES_5M)
+MENU_OPTION_STR(R_ID_STR_RES_3M)
+MENU_OPTION_STR(R_ID_STR_RES_2M)
+MENU_OPTION_STR(R_ID_STR_RES_1M)
+MENU_OPTION_END()
+
+// 连拍设置选项
+MENU_OPTION_START(PScontinuousShooting)
+MENU_OPTION_STR(R_ID_STR_COM_OFF)
+MENU_OPTION_STR(R_ID_STR_COM_ON)
+MENU_OPTION_END()
+
+// 快速预览设置选项定义
+MENU_OPTION_START(PSpfastview)     // 创建选项数组：menuOptionpfastview[]
+MENU_OPTION_STR(R_ID_STR_COM_OFF)  // 选项1：关闭快速预览
+MENU_OPTION_STR(R_ID_STR_TIM_2SEC) // 选项2：2秒后关闭预览
+MENU_OPTION_STR(R_ID_STR_TIM_5SEC) // 选项3：5秒后关闭预览
+MENU_OPTION_END()                  // 结束选项定义
+
+// 循环录像设置选项定义
+MENU_OPTION_START(PSloopRecord) // 创建选项数组：menuOptionloopRecord[]
+// MENU_OPTION_STR(R_ID_STR_COM_OFF) // 注释掉的选项：关闭循环录像
+MENU_OPTION_STR(R_ID_STR_TIM_3MIN)  // 选项1：3分钟循环录像
+MENU_OPTION_STR(R_ID_STR_TIM_5MIN)  // 选项2：5分钟循环录像
+MENU_OPTION_STR(R_ID_STR_TIM_10MIN) // 选项3：10分钟循环录像
+MENU_OPTION_END()                   // 结束选项定义
+/*
+// 自动白平衡设置选项（已注释）
+MENU_OPTION_START(awb)                // 创建选项数组：menuOptionawb[]
+MENU_OPTION_STR(R_ID_STR_ISP_AUTO)    // 选项1：自动模式
+MENU_OPTION_STR(R_ID_STR_ISP_SUNLIGHT)// 选项2：日光模式
+MENU_OPTION_STR(R_ID_STR_ISP_CLOUDY)  // 选项3：阴天模式
+MENU_OPTION_STR(R_ID_STR_ISP_TUNGSTEN)// 选项4：钨丝灯模式
+MENU_OPTION_STR(R_ID_STR_ISP_FLUORESCENT) // 选项5：荧光灯模式
+MENU_OPTION_END()
+
+// 曝光补偿设置选项（已注释）
+MENU_OPTION_START(ev)                 // 创建选项数组：menuOptionev[]
+MENU_OPTION_STR(R_ID_STR_COM_P2_0)    // 选项1：+2.0 EV
+MENU_OPTION_STR(R_ID_STR_COM_P1_0)    // 选项2：+1.0 EV
+MENU_OPTION_STR(R_ID_STR_COM_P0_0)    // 选项3：0 EV
+MENU_OPTION_STR(R_ID_STR_COM_N1_0)    // 选项4：-1.0 EV
+MENU_OPTION_STR(R_ID_STR_COM_N2_0)    // 选项5：-2.0 EV
+MENU_OPTION_END()
+
+// 运动检测设置选项（已注释）
+MENU_OPTION_START(md)                 // 创建选项数组：menuOptionmd[]
+MENU_OPTION_STR(R_ID_STR_COM_OFF)     // 选项1：关闭运动检测
+MENU_OPTION_STR(R_ID_STR_COM_ON)      // 选项2：开启运动检测
+MENU_OPTION_END()
+
+// 视频音频设置选项（已注释）
+MENU_OPTION_START(audio)              // 创建选项数组：menuOptionaudio[]
+MENU_OPTION_STR(R_ID_STR_COM_OFF)     // 选项1：关闭音频录制
+MENU_OPTION_STR(R_ID_STR_COM_ON)      // 选项2：开启音频录制
+MENU_OPTION_END()
+
+// 停车模式设置选项（已注释）
+MENU_OPTION_START(parking)            // 创建选项数组：menuOptionparking[]
+MENU_OPTION_STR(R_ID_STR_COM_OFF)     // 选项1：关闭停车模式
+MENU_OPTION_STR(R_ID_STR_COM_ON)      // 选项2：开启停车模式
+MENU_OPTION_END()
+*/
+
+// 时间戳设置选项
+MENU_OPTION_START(PStimeStamp)    // 创建选项数组：menuOptiontimeStamp[]
+MENU_OPTION_STR(R_ID_STR_COM_OFF) // 选项1：关闭时间戳
+MENU_OPTION_STR(R_ID_STR_COM_ON)  // 选项2：开启时间戳
+MENU_OPTION_END()
+
+/*
+// 重力感应器设置选项（已注释）
+MENU_OPTION_START(gsensor)          // 创建选项数组：menuOptiongsensor[]
+MENU_OPTION_STR(R_ID_STR_COM_OFF)   // 选项1：关闭重力感应
+MENU_OPTION_STR(R_ID_STR_COM_LOW)   // 选项2：低灵敏度
+MENU_OPTION_STR(R_ID_STR_COM_MIDDLE)// 选项3：中灵敏度
+MENU_OPTION_STR(R_ID_STR_COM_HIGH)  // 选项4：高灵敏度
+MENU_OPTION_END()
+*/
+
+// 按键音设置选项
+MENU_OPTION_START(PSkeySound)     // 创建选项数组：menuOptionkeySound[]
+MENU_OPTION_STR(R_ID_STR_COM_OFF) // 选项1：关闭按键音
+MENU_OPTION_STR(R_ID_STR_COM_ON)  // 选项2：开启按键音
+MENU_OPTION_END()
+
+// 自动关机设置选项
+MENU_OPTION_START(PSautoPowerOff)  // 创建选项数组：menuOptionautoPowerOff[]
+MENU_OPTION_STR(R_ID_STR_COM_OFF)  // 选项1：关闭自动关机
+MENU_OPTION_STR(R_ID_STR_TIM_1MIN) // 选项2：1分钟后自动关机
+MENU_OPTION_STR(R_ID_STR_TIM_3MIN) // 选项3：3分钟后自动关机
+MENU_OPTION_END()
+
+// 语言设置选项
+MENU_OPTION_START(PSlanguage)          // 创建选项数组：menuOptionlanguage[]
+MENU_OPTION_STR(R_ID_STR_LAN_ENGLISH)  // 选项1：英语
+MENU_OPTION_STR(R_ID_STR_LAN_SCHINESE) // 选项2：简体中文
+MENU_OPTION_STR(R_ID_STR_LAN_TCHINESE) // 选项3：繁体中文
+MENU_OPTION_STR(R_ID_STR_LAN_JAPANESE) // 选项4：日语
+MENU_OPTION_STR(R_ID_STR_LAN_KOERA)    // 选项5：韩语
+MENU_OPTION_STR(R_ID_STR_LAN_RUSSIAN)  // 选项6：俄语
+MENU_OPTION_STR(R_ID_STR_LAN_FRECH)    // 选项7：法语
+MENU_OPTION_STR(R_ID_STR_LAN_GERMAN)   // 选项8：德语
+// MENU_OPTION_STR(R_ID_STR_LAN_CZECH)  // 被注释的选项：捷克语
+MENU_OPTION_STR(R_ID_STR_LAN_PORTUGUESE) // 选项9：葡萄牙语
+MENU_OPTION_STR(R_ID_STR_LAN_POLISH)     // 选项10：波兰语
+MENU_OPTION_STR(R_ID_STR_LAN_DUTCH)      // 选项11：荷兰语
+// MENU_OPTION_STR(R_ID_STR_LAN_TURKEY) // 被注释的选项：土耳其语
+MENU_OPTION_STR(R_ID_STR_LAN_TAI)     // 选项12：泰语
+MENU_OPTION_STR(R_ID_STR_LAN_ITALIAN) // 选项13：意大利语
+MENU_OPTION_STR(R_ID_STR_LAN_SPANISH) // 选项14：西班牙语
+MENU_OPTION_END()
+
+/*
+// 频率设置选项（已注释）
+MENU_OPTION_START(frequency)             // 创建选项数组：menuOptionfrequency[]
+MENU_OPTION_STR(R_ID_STR_COM_50HZ)       // 选项1：50Hz
+MENU_OPTION_STR(R_ID_STR_COM_60HZ)       // 选项2：60Hz
+MENU_OPTION_END()
+
+// 红外LED设置选项（已注释）
+MENU_OPTION_START(irLed)                 // 创建选项数组：menuOptionirLed[]
+MENU_OPTION_STR(R_ID_STR_COM_OFF)        // 选项1：关闭红外
+MENU_OPTION_STR(R_ID_STR_COM_ON)         // 选项2：开启红外
+MENU_OPTION_STR(R_ID_STR_IR_AUTO)        // 选项3：自动红外
+MENU_OPTION_END()
+*/
+
+// 格式化设置选项
+MENU_OPTION_START(PSformat)          // 创建选项数组：menuOptionformat[]
+MENU_OPTION_STR(R_ID_STR_COM_OK)     // 选项1：确定
+MENU_OPTION_STR(R_ID_STR_COM_CANCEL) // 选项2：取消
+MENU_OPTION_END()
+
+// 默认设置选项
+MENU_OPTION_START(PSdefaul)          // 创建选项数组：menuOptiondefaul[]
+MENU_OPTION_STR(R_ID_STR_COM_OK)     // 选项1：确定
+MENU_OPTION_STR(R_ID_STR_COM_CANCEL) // 选项2：取消
+MENU_OPTION_END()
+
+// 屏幕保护设置选项
+MENU_OPTION_START(PSscreenSave)    // 创建选项数组：menuOptionscreenSave[]
+MENU_OPTION_STR(R_ID_STR_COM_OFF)  // 选项1：关闭屏幕保护
+MENU_OPTION_STR(R_ID_STR_TIM_1MIN) // 选项2：1分钟后启动
+MENU_OPTION_STR(R_ID_STR_TIM_3MIN) // 选项3：3分钟后启动
+MENU_OPTION_END()
+
+// LCD亮度设置选项
+MENU_OPTION_START(PSlcdbright)        // 创建选项数组：menuOptionlcdbright[]
+MENU_OPTION_STR(R_ID_STR_COM_LEVEL_1) // 选项1：亮度等级1
+MENU_OPTION_STR(R_ID_STR_COM_LEVEL_2) // 选项2：亮度等级2
+MENU_OPTION_STR(R_ID_STR_COM_LEVEL_3) // 选项3：亮度等级3
+MENU_OPTION_STR(R_ID_STR_COM_LEVEL_4) // 选项4：亮度等级4
+MENU_OPTION_STR(R_ID_STR_COM_LEVEL_5) // 选项5：亮度等级5
+MENU_OPTION_STR(R_ID_STR_COM_LEVEL_6) // 选项6：亮度等级6
+MENU_OPTION_STR(R_ID_STR_COM_LEVEL_7) // 选项7：亮度等级7
+MENU_OPTION_STR(R_ID_STR_COM_LEVEL_8) // 选项8：亮度等级8
+MENU_OPTION_END()
+
+// 音量设置选项
+MENU_OPTION_START(PSvolume)           // 创建选项数组：menuOptionvolume[]
+MENU_OPTION_STR(R_ID_STR_COM_LEVEL_1) // 选项1：音量等级1
+MENU_OPTION_STR(R_ID_STR_COM_LEVEL_2) // 选项2：音量等级2
+MENU_OPTION_STR(R_ID_STR_COM_LEVEL_3) // 选项3：音量等级3
+MENU_OPTION_STR(R_ID_STR_COM_LEVEL_4) // 选项4：音量等级4
+MENU_OPTION_STR(R_ID_STR_COM_LEVEL_5) // 选项5：音量等级5
+MENU_OPTION_STR(R_ID_STR_COM_LEVEL_6) // 选项6：音量等级6
+MENU_OPTION_STR(R_ID_STR_COM_LEVEL_7) // 选项7：音量等级7
+MENU_OPTION_STR(R_ID_STR_COM_LEVEL_8) // 选项8：音量等级8
+MENU_OPTION_END()
+
+// 定时拍照设置选项
+MENU_OPTION_START(PStimephoto)      // 创建选项数组：menuOptiontimephoto[]
+MENU_OPTION_STR(R_ID_STR_COM_OFF)   // 选项1：关闭定时拍照
+MENU_OPTION_STR(R_ID_STR_TIM_3SEC)  // 选项2：3秒定时
+MENU_OPTION_STR(R_ID_STR_TIM_5SEC)  // 选项3：5秒定时
+MENU_OPTION_STR(R_ID_STR_TIM_10SEC) // 选项4：10秒定时
+MENU_OPTION_END()
+
+// 版本信息选项
+MENU_OPTION_START(PSversion) // 创建选项数组：menuOptionversion[]
+MENU_OPTION_STR(version_str) // 选项1：显示版本信息
+MENU_OPTION_END()
+
+// 声明菜单处理函数
+void menuProcDateTime(winHandle handle, uint32 parameNum, uint32 *parame);
+void menuProcFormat(winHandle handle, uint32 parameNum, uint32 *parame);
+void menuProcDefault(winHandle handle, uint32 parameNum, uint32 *parame);
+void menuProcVersion(winHandle handle, uint32 parameNum, uint32 *parame);
+
+// 开始定义镜头滤镜菜单页面
+MENU_ITME_START(PSlensFilter)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_IoTEgr_005)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_IoTEgr_006)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_IoTEgr_007)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_IoTEgr_008)
+MENU_ITME_END()
+
+// 开始定义图片质量菜单页面
+MENU_ITME_START(PSphotoResolution)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_RES_48M)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_RES_40M)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_RES_24M)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_RES_20M)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_RES_18M)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_RES_16M)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_RES_12M)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_RES_10M)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_RES_8M)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_RES_5M)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_RES_3M)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_RES_2M)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_RES_1M)
+MENU_ITME_END()
+
+// 开始定义连续拍照菜单页面
+MENU_ITME_START(PScontinuousShooting)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_COM_OFF)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_COM_ON)
+MENU_ITME_END()
+// 开始定义定时拍照菜单页面
+MENU_ITME_START(PStimephoto)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_COM_OFF)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_TIM_3SEC)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_TIM_5SEC)
+MENU_ITEM_PROC(NULL, NULL, R_ID_STR_TIM_10SEC)
+MENU_ITME_END()
+
+// 开始定义电影菜单项
+MENU_ITME_START(PSmovie)
+// 视频分辨率设置项
+MENU_ITEM_OPTIONS(PSvidResolution, CONFIG_ID_RESOLUTION, NULL, R_ID_STR_SET_VIDEO_RESOLUTION)
+// 循环录像设置项
+MENU_ITEM_OPTIONS(PSloopRecord, CONFIG_ID_LOOPTIME, NULL, R_ID_STR_SET_LOOPRECORD)
+// 时间戳设置项
+MENU_ITEM_OPTIONS(PStimeStamp, CONFIG_ID_TIMESTAMP, NULL, R_ID_STR_SET_TIMESTRAMP)
+// 语言设置项
+MENU_ITEM_OPTIONS(PSlanguage, CONFIG_ID_LANGUAGE, NULL, R_ID_STR_SET_LANGUAGE)
+// LCD亮度设置项
+MENU_ITEM_OPTIONS(PSlcdbright, CONFIG_ID_LCD_BRIGHT, NULL, R_ID_STR_COM_LCD_BRIGHTNESS)
+// 自动关机设置项
+MENU_ITEM_OPTIONS(PSautoPowerOff, CONFIG_ID_AUTOOFF, NULL, R_ID_STR_SET_AUTOOFF)
+// 屏幕保护设置项
+MENU_ITEM_OPTIONS(PSscreenSave, CONFIG_ID_SCREENSAVE, NULL, R_ID_STR_SET_SCREEN_SAVERS)
+// 音量设置项
+MENU_ITEM_OPTIONS(PSvolume, CONFIG_ID_VOLUME, NULL, R_ID_STR_SET_VOLUME)
+// 格式化设置项
+MENU_ITEM_OPTIONS(PSformat, CONFIG_ID_FORMAT, NULL, R_ID_STR_SET_FORMAT)
+// 日期时间设置项（使用处理函数）
+MENU_ITEM_PROC(menuProcDateTime, NULL, R_ID_STR_SET_DATETIME)
+// 默认设置项
+MENU_ITEM_OPTIONS(PSdefaul, CONFIG_ID_DEFUALT, NULL, R_ID_STR_SET_DEFAULT_SETTING)
+// 版本信息项（使用处理函数）
+MENU_ITEM_PROC(menuProcVersion, NULL, R_ID_STR_SET_VERSION)
+// 结束电影菜单项定义
+MENU_ITME_END()
+
+// 开始定义电影菜单页面
+MENU_PAGE_START(PSmovie)
+// 添加镜头滤镜菜单项到页面
+MENU_PAGE_ITEMS(PSlensFilter, NULL, NULL, R_ID_STR_IoTEgr_001)
+// 添加图片质量菜单项到页面
+MENU_PAGE_ITEMS(PSphotoResolution, NULL, NULL, R_ID_STR_IoTEgr_002)
+// 添加连续拍照菜单项到页面
+MENU_PAGE_ITEMS(PScontinuousShooting, NULL, NULL, R_ID_STR_IoTEgr_003)
+// 添加定时拍照菜单项到页面
+MENU_PAGE_ITEMS(PStimephoto, NULL, NULL, R_ID_STR_SET_TIMEPHOTO)
+// 添加电影菜单项到页面
+MENU_PAGE_ITEMS(PSmovie, NULL, NULL, R_ID_STR_SET_VIDEO)
+// 结束电影菜单页面定义
+MENU_PAGE_END()
+
+// 定义电影菜单
+MENU_DEFINE(PSmovie)

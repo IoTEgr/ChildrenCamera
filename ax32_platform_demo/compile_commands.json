@@ -1,0 +1,1513 @@
+[{
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii_num3_draw.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii_num3_draw.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii_num3_draw.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii_num3.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii_num3.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii_num3.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\unicode_font.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\unicode_font.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\unicode_font.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\R_icon.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\R_icon.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\R_icon.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii_default.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii_default.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii_default.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii_default.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii_default.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii_default.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\R_string.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\R_string.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\R_string.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\typedef.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\typedef.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\typedef.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\std_math.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\std_math.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\std_math.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\std_math.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\std_math.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\std_math.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\misc.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\misc.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\misc.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\misc.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\misc.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\misc.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\fs\\inc\\integer.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\fs\\inc\\integer.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\fs\\inc\\integer.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii_num3.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii_num3.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii_num3.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\fs\\inc\\fs.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\fs\\inc\\fs.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\fs\\inc\\fs.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\fs\\inc\\ff.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\fs\\inc\\ff.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\fs\\inc\\ff.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\avi\\inc\\avi_api.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\avi\\inc\\avi_api.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\avi\\inc\\avi_api.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\decoder.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\decoder.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\decoder.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\config.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\config.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\config.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\timer.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\timer.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\timer.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\synth.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\synth.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\synth.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\stream.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\stream.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\stream.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\layer12.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\layer12.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\layer12.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\huffman.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\huffman.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\huffman.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\fs\\inc\\ffconf.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\fs\\inc\\ffconf.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\fs\\inc\\ffconf.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\frame.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\frame.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\frame.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\uiDraw.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\uiDraw.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\uiDraw.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\max_user.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\max_user.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\max_user.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\maxlib_config.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\maxlib_config.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\maxlib_config.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\nvfs\\nvfs.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\nvfs\\nvfs.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\nvfs\\nvfs.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\lcd_mcu_hx8352c.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\lcd_mcu_hx8352c.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\lcd_mcu_hx8352c.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\tft_lcd.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\tft_lcd.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\tft_lcd.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_GC0329.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_GC0329.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_GC0329.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_SP0A18.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_SP0A18.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_SP0A18.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_GC0328.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_GC0328.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_GC0328.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_GC0309.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_GC0309.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_GC0309.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_BF3a03.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_BF3a03.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_BF3a03.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\cmos_sensor.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\cmos_sensor.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\cmos_sensor.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\stream\\stream.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\stream\\stream.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\stream\\stream.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\wav.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\wav.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\wav.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\wav.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\wav.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\wav.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\ulaw.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\ulaw.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\ulaw.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\image\\image_decode.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\image\\image_decode.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\image\\image_decode.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\image\\image_encode.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\image\\image_encode.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\image\\image_encode.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\video\\video_record.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\video\\video_record.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\video\\video_record.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\avi\\inc\\avi_std.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\avi\\inc\\avi_std.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\avi\\inc\\avi_std.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\video\\video_record.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\video\\video_record.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\video\\video_record.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\avi\\inc\\avi_error.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\avi\\inc\\avi_error.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\avi\\inc\\avi_error.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\audio\\audio_record.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\audio\\audio_record.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\audio\\audio_record.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\audio\\audio_playback.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\audio\\audio_playback.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\audio\\audio_playback.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_uvc.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_uvc.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_uvc.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_uac.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_uac.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_uac.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\layer3.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\layer3.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\layer3.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_dev_enum.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_dev_enum.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_dev_enum.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\imageL\\inc\\imageL_encode.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\imageL\\inc\\imageL_encode.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\imageL\\inc\\imageL_encode.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_custom_yuv.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_custom_yuv.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_custom_yuv.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\pcm.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\pcm.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\pcm.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_osdcmp.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_osdcmp.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_osdcmp.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\mp3_decode_api.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\mp3_decode_api.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\mp3_decode_api.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_emi.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_emi.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_emi.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\alaw.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\alaw.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\alaw.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_stream.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_stream.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_stream.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_wdt.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_wdt.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_wdt.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_int.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_int.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_int.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_mjpeg.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_mjpeg.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_mjpeg.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_auadc.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_auadc.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_auadc.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_msc.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_msc.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_msc.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_sys.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_sys.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_sys.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_uart.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_uart.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_uart.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_spi.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_spi.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_spi.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\R_icon.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\R_icon.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\R_icon.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\mad.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\mad.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\mad.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\stream\\stream.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\stream\\stream.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\stream\\stream.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_sd.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_sd.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_sd.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\R_string.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\R_string.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\R_string.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_osd.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_osd.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_osd.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_lcd.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_lcd.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_lcd.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_gpio.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_gpio.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_gpio.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_iic.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_iic.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_iic.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_eeprom.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_eeprom.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_eeprom.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_csi.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_csi.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_csi.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_cfg.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_cfg.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_cfg.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\pcm.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\pcm.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\pcm.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_custom_yuv.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_custom_yuv.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_custom_yuv.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_emi.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_emi.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_emi.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_stream.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_stream.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_stream.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_wdt.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_wdt.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_wdt.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_int.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_int.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_int.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_watermark.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_watermark.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_watermark.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_uart.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_uart.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_uart.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_timer.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_timer.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_timer.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_spi.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_spi.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_spi.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_rtc.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_rtc.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_rtc.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_osd.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_osd.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_osd.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_iic.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_iic.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_iic.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii_default_draw.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii_default_draw.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\ascii_default_draw.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_gpio.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_gpio.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_gpio.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_eeprom.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_eeprom.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_eeprom.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_dac.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_dac.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_dac.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_csi.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_csi.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_csi.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_adc.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_adc.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_adc.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\user_icon.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\user_icon.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\user_icon.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\user_icon.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\user_icon.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\user_icon.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_mjpeg.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_mjpeg.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_mjpeg.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\resource_manager.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\resource_manager.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\resource_manager.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\icon.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\icon.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\icon.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\font.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\font.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\font.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_dev_enum.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_dev_enum.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_dev_enum.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\explorer.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\explorer.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\explorer.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\display.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\display.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\display.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_GC0307.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_GC0307.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_GC0307.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\customer.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\customer.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\customer.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_adc.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_adc.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_adc.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\config.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\config.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\config.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\board.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\board.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\inc\\board.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_uac.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_uac.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_uac.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\csi\\ax32xx_csi.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\csi\\ax32xx_csi.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\csi\\ax32xx_csi.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_isp.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_isp.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_isp.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\lcd_mcu_nv3030b.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\lcd_mcu_nv3030b.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\lcd_mcu_nv3030b.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\lcd_mcu_ili9328.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\lcd_mcu_ili9328.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\lcd_mcu_ili9328.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_rotate.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_rotate.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_rotate.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_crc.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_crc.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_crc.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_pip.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_pip.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_pip.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_rotate.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_rotate.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_rotate.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_usb.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_usb.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_usb.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_wdt.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_wdt.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_wdt.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\jpeg_table.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\jpeg_table.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\jpeg_table.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_auadc.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_auadc.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_auadc.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\unicode_font.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\unicode_font.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\unicode_font.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_lcdframe.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_lcdframe.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_lcdframe.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_adc.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_adc.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_adc.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\image\\image_encode.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\image\\image_encode.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\image\\image_encode.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_osdcmp.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_osdcmp.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_osdcmp.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_rtc.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_rtc.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_rtc.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_spi.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_spi.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_spi.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\fixed.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\fixed.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\fixed.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_gpio.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_gpio.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_gpio.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_int.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_int.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_int.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\tft_lcd.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\tft_lcd.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\tft_lcd.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_lcdframe.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_lcdframe.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_lcdframe.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_emi.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_emi.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_emi.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\video\\video_playback.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\video\\video_playback.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\video\\video_playback.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\tips.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\tips.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\tips.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_misc.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_misc.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_misc.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_pip.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_pip.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_pip.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\widget.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\widget.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\widget.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_spr_defs.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_spr_defs.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_spr_defs.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_lcd.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_lcd.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_lcd.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiTipsRes.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiTipsRes.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiTipsRes.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax329x.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax329x.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax329x.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\imaadpcm.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\imaadpcm.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\wav\\imaadpcm.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_misc.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_misc.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_misc.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_csi.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_csi.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_csi.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_lcd.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_lcd.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_lcd.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\maxlib.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\maxlib.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\maxlib.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_adc.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_adc.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_adc.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_dac.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_dac.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_dac.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_SP0838.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_SP0838.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_SP0838.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_auadc.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_auadc.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_auadc.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_iic.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_iic.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_iic.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xwork.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xwork.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xwork.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_md.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_md.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_md.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\lcd\\ax32xx_lcd.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\lcd\\ax32xx_lcd.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\lcd\\ax32xx_lcd.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_spi.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_spi.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_spi.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\user_media.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\user_media.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\user_media.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_timer.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_timer.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_timer.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_gpio.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_gpio.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_gpio.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_rotate.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_rotate.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_rotate.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_wdt.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_wdt.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_wdt.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\font.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\font.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\font.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_dma.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_dma.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_dma.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\R.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\R.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\R.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\game_block.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\game_block.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\game_block.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_uart.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_uart.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_uart.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_int.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_int.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_int.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\global.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\global.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\global.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\typedef.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\typedef.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\typedef.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\winManage.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\winManage.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\winManage.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_sys.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_sys.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_sys.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\explorer.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\explorer.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\explorer.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuUsbRes.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuUsbRes.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuUsbRes.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\memPool.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\memPool.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\memPool.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\winManage.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\winManage.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\winManage.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiTips1Res.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiTips1Res.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiTips1Res.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskGameMenu.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskGameMenu.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskGameMenu.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\widget.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\widget.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\widget.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuFormatMsg.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuFormatMsg.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuFormatMsg.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\userDef.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\userDef.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\userDef.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_btuart.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_btuart.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_btuart.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\uiAlloc.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\uiAlloc.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\uiAlloc.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\menuItemEx.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\menuItemEx.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\menuItemEx.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\imageIcon.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\imageIcon.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\imageIcon.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_isp.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_isp.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_isp.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\lcd_mcu_9225G.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\lcd_mcu_9225G.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\lcd_mcu_9225G.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_crc.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_crc.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_crc.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\stringIcon.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\stringIcon.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\stringIcon.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPowerOff.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPowerOff.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPowerOff.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\progressBar.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\progressBar.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\progressBar.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\uiAlloc.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\uiAlloc.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\uiAlloc.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\progressBar.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\progressBar.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\progressBar.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\mType.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\mType.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\mType.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\lcd_mcu_st7789v.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\lcd_mcu_st7789v.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\lcd_mcu_st7789v.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\menuOption.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\menuOption.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\menuOption.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\menuItemEx.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\menuItemEx.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\menuItemEx.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\user_str.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\user_str.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\user_str.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\menuItem.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\menuItem.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\menuItem.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_osdcmp.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_osdcmp.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_osdcmp.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\itemManage.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\itemManage.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\itemManage.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_sys.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_sys.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_sys.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\imageIcon.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\imageIcon.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\imageIcon.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\frameWin.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\frameWin.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\frameWin.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskGameMenuMsg.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskGameMenuMsg.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskGameMenuMsg.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskMainMenu.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskMainMenu.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskMainMenu.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_emi.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_emi.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_emi.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_dma.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_dma.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_dma.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_osdcmp.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_osdcmp.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_osdcmp.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_sd.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_sd.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_sd.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\msgSysRecommend.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\msgSysRecommend.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\msgSysRecommend.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\debug.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\debug.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\debug.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\button.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\button.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\button.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\R.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\R.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\res\\R.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_rtc.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_rtc.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_rtc.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_uart.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_uart.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_uart.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_auadc.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_auadc.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_auadc.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\bwlib.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\bwlib.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\bwlib.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\user_media.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\user_media.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\user_media.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_usb.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_usb.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_usb.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\multimedia.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\multimedia.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\multimedia.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\media.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\media.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\media.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\filelist.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\filelist.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\filelist.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xwork.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xwork.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xwork.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\rect.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\rect.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\rect.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\dialog.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\dialog.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\dialog.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xos.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xos.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xos.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xmsgq.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xmsgq.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xmsgq.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xmbox.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xmbox.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xmbox.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\sUI.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\sUI.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\sUI.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xcfg.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xcfg.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xcfg.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskGame.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskGame.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskGame.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\game_maze.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\game_maze.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\game_maze.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\user_str.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\user_str.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\user_str.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\game_tetris.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\game_tetris.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\game_tetris.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_BF3703.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_BF3703.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_BF3703.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\game_snake.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\game_snake.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\game_snake.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\mjpeg\\ax32xx_mjpeg.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\mjpeg\\ax32xx_mjpeg.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\mjpeg\\ax32xx_mjpeg.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\tips.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\tips.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\tips.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_cfg.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_cfg.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_cfg.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\max_user.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\max_user.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\max_user.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_dac.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_dac.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_dac.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\resource.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\resource.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\resource.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDateTimeRes.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDateTimeRes.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDateTimeRes.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\x_cpu.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\x_cpu.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\x_cpu.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\msgSysUnshielded.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\msgSysUnshielded.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\msgSysUnshielded.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\game_sokoban.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\game_sokoban.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\game_sokoban.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\upgrade.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\upgrade.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\upgrade.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiWin.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiWin.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiWin.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskSettingMenu.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskSettingMenu.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskSettingMenu.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskSysScanDevice.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskSysScanDevice.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskSysScanDevice.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\audio\\audio_playback.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\audio\\audio_playback.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\audio\\audio_playback.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\configGetValue.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\configGetValue.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\configGetValue.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\itemManage.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\itemManage.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\itemManage.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\max.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\max.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\max.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiTipsMsg.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiTipsMsg.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiTipsMsg.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiNoFileRes.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiNoFileRes.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiNoFileRes.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskAudioPlayer.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskAudioPlayer.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskAudioPlayer.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xmbox.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xmbox.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xmbox.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuVersionRes.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuVersionRes.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuVersionRes.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuOptionRes.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuOptionRes.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuOptionRes.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPlayBackMsg.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPlayBackMsg.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPlayBackMsg.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskGameMenuRes.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskGameMenuRes.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskGameMenuRes.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\userInterface.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\userInterface.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\userInterface.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_sys.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_sys.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_sys.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\configSystem.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\configSystem.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\configSystem.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDefaultRes.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDefaultRes.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDefaultRes.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDelCurRes.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDelCurRes.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDelCurRes.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\widgetManage.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\widgetManage.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\widgetManage.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPhotoEncodeMsg.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPhotoEncodeMsg.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPhotoEncodeMsg.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskAudioPlayerRes.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskAudioPlayerRes.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskAudioPlayerRes.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskAudioPlayerMsg.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskAudioPlayerMsg.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskAudioPlayerMsg.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\main.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\main.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\main.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuVersionMsg.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuVersionMsg.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuVersionMsg.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_api.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_api.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_api.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\stringIcon.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\stringIcon.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\stringIcon.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\avi\\inc\\avi_odml.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\avi\\inc\\avi_odml.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\avi\\inc\\avi_odml.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xerr.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xerr.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xerr.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_OV7670.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_OV7670.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_OV7670.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\game_plane.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\game_plane.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\game_plane.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiWin.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiWin.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiWin.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPlayBackRes.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPlayBackRes.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPlayBackRes.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\menuOption.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\menuOption.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\menuOption.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiNoFileMsg.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiNoFileMsg.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiNoFileMsg.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_tminf.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_tminf.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_tminf.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_uvc.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_uvc.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_uvc.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuUsbMsg.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuUsbMsg.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuUsbMsg.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\fs\\inc\\diskio.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\fs\\inc\\diskio.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\fs\\inc\\diskio.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\lcd_mcu_st7789.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\lcd_mcu_st7789.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\tft_lcd\\lcd_mcu_st7789.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\memPool.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\memPool.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\memPool.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\avi\\inc\\avi.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\avi\\inc\\avi.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\avi\\inc\\avi.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\nvfs\\nvfs.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\nvfs\\nvfs.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\nvfs\\nvfs.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskVideoRecordMsg.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskVideoRecordMsg.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskVideoRecordMsg.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\spi_boot_cfg.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\spi_boot_cfg.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\spi_boot_cfg.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDelCurMsg.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDelCurMsg.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDelCurMsg.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_sd.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_sd.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_sd.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDefaultMsg.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDefaultMsg.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDefaultMsg.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\toolFunc.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\toolFunc.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\toolFunc.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiTips1Msg.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiTips1Msg.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiTips1Msg.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\cmos_sensor.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\cmos_sensor.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\cmos_sensor.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_msc.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_msc.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_msc.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskUsbDevice.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskUsbDevice.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskUsbDevice.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskManage.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskManage.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskManage.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\bit.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\bit.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\bit.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\logo.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\logo.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\logo.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskVideoRecord.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskVideoRecord.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskVideoRecord.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_mjpeg.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_mjpeg.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_mjpeg.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\x_cpu.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\x_cpu.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\x_cpu.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPlayBack.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPlayBack.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPlayBack.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\rect.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\rect.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\rect.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\osd\\ax32xx_osd.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\osd\\ax32xx_osd.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\osd\\ax32xx_osd.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\msgDeal.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\msgDeal.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\msgDeal.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\audio\\audio_record.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\audio\\audio_record.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\audio\\audio_record.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_timer.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_timer.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_timer.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xos.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xos.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xos.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDateTimeMsg.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDateTimeMsg.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDateTimeMsg.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_rtc.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_rtc.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_rtc.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\RES.H",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\RES.H -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\RES.H.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\button.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\button.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\button.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDelAllRes.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDelAllRes.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDelAllRes.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\frameWin.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\frameWin.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\frameWin.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuItemRes.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuItemRes.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuItemRes.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuFormatRes.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuFormatRes.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuFormatRes.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\str.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\str.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\str.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\menuItem.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\menuItem.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\menuItem.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_btuart.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_btuart.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_btuart.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskVideoRecordRes.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskVideoRecordRes.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskVideoRecordRes.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\version.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\version.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\mp3\\inc\\version.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\menuMovieRec.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\menuMovieRec.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\menuMovieRec.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDelAllMsg.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDelAllMsg.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuDelAllMsg.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuItemMsg.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuItemMsg.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuItemMsg.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\menu.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\menu.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\menu.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuOptionMsg.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuOptionMsg.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\uiMenuOptionMsg.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\audio\\ring_buffer.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\audio\\ring_buffer.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\audio\\ring_buffer.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\dialog.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\dialog.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\sUI\\dialog.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskManage.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskManage.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskManage.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_iic.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_iic.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_iic.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\config.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\config.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\config.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\icon.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\icon.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\icon.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\board.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\board.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\board.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_watermark.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_watermark.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_watermark.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_timer.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_timer.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_timer.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_tminf.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_tminf.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_tminf.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\display.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\display.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\display.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\image\\image_decode.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\image\\image_decode.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\image\\image_decode.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_osd.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_osd.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\inc\\ax32xx_osd.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\boot_config.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\boot_config.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\boot_config.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_BF2013.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_BF2013.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_BF2013.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\audio\\ring_buffer.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\audio\\ring_buffer.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\audio\\ring_buffer.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\board_bwv1.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\board_bwv1.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\board_bwv1.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskMainMenuMsg.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskMainMenuMsg.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskMainMenuMsg.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_dac.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_dac.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32xx\\src\\ax32xx_dac.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPhotoEncodeRes.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPhotoEncodeRes.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPhotoEncodeRes.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\video\\video_playback.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\video\\video_playback.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\multimedia\\video\\video_playback.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\str.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\str.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\bwlib\\Maxlib\\std\\str.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPhotoEncode.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPhotoEncode.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskPhotoEncode.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource_manager.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource_manager.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource_manager.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_GC0308.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_GC0308.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_GC0308.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xmsgq.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xmsgq.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xmsgq.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_md.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_md.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\inc\\hal_md.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xdef.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xdef.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\xos\\xdef.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_api.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_api.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\dusb\\hal_usb_api.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\application.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\application.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\application.h.o  -I. -I../bwlib  -g -Wall"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_SIV100B.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_SIV100B.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\device\\cmos_sensor\\SENSOR_SIV100B.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_rotate.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_rotate.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\hal\\src\\hal_rotate.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskMainMenuRes.c",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskMainMenuRes.c -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\taskMainMenuRes.c.o  -I. -I../bwlib  -Os  -Wall  -mhard-div"
+	}, {
+		"file":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\r_palette.h",
+		"directory":	"C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo",
+		"command":	"clang++ -c C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\r_palette.h -o C:\\Users\\jingcheng.huang\\Desktop\\kid_cam\\ax32_platform_demo\\resource\\r_palette.h.o  -I. -I../bwlib  -g -Wall"
+	}]

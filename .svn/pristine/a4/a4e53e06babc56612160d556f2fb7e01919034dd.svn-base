@@ -1,0 +1,925 @@
+#include <stdarg.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <ctype.h>
+
+#include "K6502.h"
+#include "InfoNES.h"
+#include "InfoNES_System.h"
+#include "InfoNES_Mapper.h"
+#include "InfoNES_pAPU.h"
+bool savieFile=false;
+
+#if NES_DRAW_USE == NES_DRAW_USE_OSD
+
+// Palette data
+/*WORD NesPalette[ 64 ] =
+{
+    0x39ce, 0x1071, 0x0015, 0x2013, 0x440e, 0x5402, 0x5000, 0x3c20,
+    0x20a0, 0x0100, 0x0140, 0x00e2, 0x0ceb, 0x0000, 0x0000, 0x0000,
+    0x5ef7, 0x01dd, 0x10fd, 0x401e, 0x5c17, 0x700b, 0x6ca0, 0x6521,
+    0x45c0, 0x0240, 0x02a0, 0x0247, 0x0211, 0x0000, 0x0000, 0x0000,
+    0x7fff, 0x1eff, 0x2e5f, 0x223f, 0x79ff, 0x7dd6, 0x7dcc, 0x7e67,
+    0x7ae7, 0x4342, 0x2769, 0x2ff3, 0x03bb, 0x0000, 0x0000, 0x0000,
+    0x7fff, 0x579f, 0x635f, 0x6b3f, 0x7f1f, 0x7f1b, 0x7ef6, 0x7f75,
+    0x7f94, 0x73f4, 0x57d7, 0x5bf9, 0x4ffe, 0x0000, 0x0000, 0x0000
+    
+};*/
+#else
+#define cst_prom0   21
+#define cst_prom1   79
+#define cst_prom2   29
+#define cst_prom3   43
+#define RGB_GET_Y(r,g,b)    (((INT32)g) + ((cst_prom1 * (((INT32)r)-((INT32)g))) >> 8) + ((cst_prom2 * (((INT32)b)-((INT32)g))) >> 8) )
+#define RGB_GET_U(r,g,b)    (128 + ((cst_prom3 * (((INT32)g)-((INT32)r))) >> 8) + ((((INT32)b)-((INT32)g)) >> 1) )
+#define RGB_GET_V(r,g,b)    (128 + ((cst_prom0 * (((INT32)g)-((INT32)b))) >> 8) + ((((INT32)r)-((INT32)g)) >> 1) )
+// Palette data
+typedef uint32_t		DWORD;
+
+DWORD NesPalette[ 64 ] =       // YUV
+{
+    0x39ce, 0x1071, 0x0015, 0x2013, 0x440e, 0x5402, 0x5000, 0x3c20,
+    0x20a0, 0x0100, 0x0140, 0x00e2, 0x0ceb, 0x0000, 0x0000, 0x0000,
+    0x5ef7, 0x01dd, 0x10fd, 0x401e, 0x5c17, 0x700b, 0x6ca0, 0x6521,
+    0x45c0, 0x0240, 0x02a0, 0x0247, 0x0211, 0x0000, 0x0000, 0x0000,
+    0x7fff, 0x1eff, 0x2e5f, 0x223f, 0x79ff, 0x7dd6, 0x7dcc, 0x7e67,
+    0x7ae7, 0x4342, 0x2769, 0x2ff3, 0x03bb, 0x0000, 0x0000, 0x0000,
+    0x7fff, 0x579f, 0x635f, 0x6b3f, 0x7f1f, 0x7f1b, 0x7ef6, 0x7f75,
+    0x7f94, 0x73f4, 0x57d7, 0x5bf9, 0x4ffe, 0x0000, 0x0000, 0x0000
+    
+};
+
+WORD NesPaletteRGB[ 64 ] =    // RGB
+{
+    0x39ce, 0x1071, 0x0015, 0x2013, 0x440e, 0x5402, 0x5000, 0x3c20,
+    0x20a0, 0x0100, 0x0140, 0x00e2, 0x0ceb, 0x0000, 0x0000, 0x0000,
+    0x5ef7, 0x01dd, 0x10fd, 0x401e, 0x5c17, 0x700b, 0x6ca0, 0x6521,
+    0x45c0, 0x0240, 0x02a0, 0x0247, 0x0211, 0x0000, 0x0000, 0x0000,
+    0x7fff, 0x1eff, 0x2e5f, 0x223f, 0x79ff, 0x7dd6, 0x7dcc, 0x7e67,
+    0x7ae7, 0x4342, 0x2769, 0x2ff3, 0x03bb, 0x0000, 0x0000, 0x0000,
+    0x7fff, 0x579f, 0x635f, 0x6b3f, 0x7f1f, 0x7f1b, 0x7ef6, 0x7f75,
+    0x7f94, 0x73f4, 0x57d7, 0x5bf9, 0x4ffe, 0x0000, 0x0000, 0x0000
+    
+};
+extern void hal_dispframeVideoDestWH(disp_frame_t* p_frame,u16 width,u16 height);
+disp_frame_t *workBuffer;
+#endif
+extern void *hal_sysMemMalloc(unsigned long size,unsigned char algin);
+extern void hal_sysMemFree(void *mem);
+
+int nesStart(/*char* gameName*/int res_num)
+{
+#if NES_DRAW_USE == NES_DRAW_USE_OSD
+    //WorkFrame = (BYTE *)hal_sysMemMalloc( NES_DISP_WIDTH*NES_DISP_HEIGHT,32 );
+    WorkFrame=gameGetDrawBuff();//getDrawBuff();
+#else
+	int i;
+	BYTE  r,g,b;
+	for(i=0;i<64;i++)
+	{
+		b=(NesPaletteRGB[i]&0x1f)<<3;
+		g=((NesPaletteRGB[i]>>5)&0x1f)<<3;
+		r=((NesPaletteRGB[i]>>10)&0x1f)<<3;
+		NesPalette[i]=(RGB_GET_Y(r,g,b)<<16)+(RGB_GET_U(r,g,b)<<8)+(RGB_GET_V(r,g,b));
+	}
+    //WorkFrame = (BYTE *)hal_sysMemMalloc( NES_DISP_WIDTH*NES_DISP_HEIGHT,32 );
+    disp_frame_t *p_lcd_buffer=NULL;
+    while(p_lcd_buffer==NULL)
+	{
+		p_lcd_buffer = (disp_frame_t *)dispLayerGetFrame(DISP_LAYER_VIDEO);
+	}
+	workBuffer=p_lcd_buffer;
+	hal_dispframeVideoCfg(p_lcd_buffer,0,0,NES_DISP_WIDTH,NES_DISP_HEIGHT);
+	u16 lcdW,lcdH;
+	hal_lcdGetResolution(&lcdW,&lcdH);
+	hal_dispframeVideoDestWH(p_lcd_buffer,lcdW,lcdH);
+    WorkFrame=p_lcd_buffer->y_addr;//getDrawBuff();
+#endif   
+    if(0 != InfoNES_Load(/*gameName*/res_num)) {
+
+        return -1;
+    }
+    return 0;
+}
+
+void nesStop(void)
+{
+	//hal_sysMemFree( WorkFrame );
+}
+
+/*===================================================================*/
+/*                                                                   */
+/*                  InfoNES_Menu() : Menu screen                     */
+/*                                                                   */
+/*===================================================================*/
+int InfoNES_Menu()
+{
+/*
+ *  Menu screen
+ *
+ *  Return values
+ *     0 : Normally
+ *    -1 : Exit InfoNES
+ */
+
+  if ( PAD_PUSH( PAD_System, PAD_SYS_QUIT) )
+    return -1;	 	
+
+  // Nothing to do here
+  return 0;
+}
+#if 1
+/*===================================================================*/
+/*                                                                   */
+/*               InfoNES_ReadRom() : Read ROM image file             */
+/*                                                                   */
+/*===================================================================*/
+int InfoNES_ReadRom(int res_num)
+{
+/*
+ *  Read ROM image file
+ *
+ *  Parameters
+ *    const char *pszFileName          (Read)
+ *
+ *  Return values
+ *     0 : Normally
+ *    -1 : Error
+ */
+
+    int addr;
+	UINT size;
+	u8 i;
+	////fd = open((const char *)pszFileName,FA_READ);
+	 int  index = 0;
+	addr = nv_open(res_num);
+
+	if(addr < 0)
+	{
+       //deg_Printf(" open failed!!!\n");
+	    return -1;
+	}
+
+  /* Read ROM Header */
+  nv_read(addr-3,(u8 *)&NesHeader,sizeof(NesHeader));
+  
+  index = sizeof(NesHeader);
+  //for(i=0;i<sizeof(NesHeader);i++)
+  	//deg_Printf("%x ",*((u8 *)&NesHeader+i));
+  //deg_Printf("\n");
+  
+  if ( memcmp( NesHeader.byID, "NES\x1a", 4 ) != 0 )
+  {
+    /* not .nes file */
+	//deg_Printf("not nes file!!!\n");
+    return -1;
+  }
+   //for(i=0;i<sizeof(NesHeader);i++)
+  	//deg_Printf("%x ",*((u8*)&NesHeader+i));
+  	//deg_Printf("\n");
+	
+  /* Clear SRAM */
+  memset( SRAM, 0, SRAM_SIZE );
+
+  /* If trainer presents Read Triner at 0x7000-0x71ff */
+  if ( NesHeader.byInfo1 & 4 )
+  {
+    	deg_Printf("SRAM\n");
+	 nv_read(addr+index,(void *)&SRAM[ 0x1000 ],512);
+	 index +=  512;
+	  for(i=0;i<512;i++)
+  		deg_Printf("%x ",*((u8*)SRAM+0x1000+i));
+	 deg_Printf("\n");
+  }
+
+  /* Allocate Memory for ROM Image */
+  ROM = (BYTE *)hal_sysMemMalloc( NesHeader.byRomSize * 0x4000,32 );
+  if(ROM==NULL)
+  {
+  	deg_Printf("malloc ROM [%d] failed!!!\n",NesHeader.byRomSize * 0x4000);
+    return -1;
+  }
+    deg_Printf("ROM\n");
+	 deg_Printf("the byRomSize is %d\n",NesHeader.byRomSize);
+  /* Read ROM Image */
+  nv_read(addr+index,(void *)ROM,NesHeader.byRomSize * 0x4000);
+  index += NesHeader.byRomSize * 0x4000;
+  /* for(i=0;i<NesHeader.byRomSize * 0x4000;i++)
+  		deg_Printf("%x ",*((u8*)ROM+i));
+	 deg_Printf("\n");*/
+
+	deg_Printf("VROM\n"); 
+  if ( NesHeader.byVRomSize > 0 )
+  {
+    /* Allocate Memory for VROM Image */
+    VROM = (BYTE *)hal_sysMemMalloc( NesHeader.byVRomSize * 0x2000,32 );
+	if(VROM==NULL)
+    {
+  	   deg_Printf("malloc VROM [%d] failed!!!\n", NesHeader.byVRomSize * 0x2000);
+	   hal_sysMemFree( ROM );
+       ROM = NULL;
+       return -1;
+    }
+	nv_read(addr+index,(void *)VROM,NesHeader.byVRomSize * 0x2000);
+  	index += NesHeader.byVRomSize * 0x2000;
+	/* for(i=0;i<NesHeader.byVRomSize * 0x2000;i++)
+  		deg_Printf("%x ",*((u8*)VROM+i));
+	 deg_Printf("\n");*/
+  }
+	deg_Printf("load nes game seccuss\n");
+
+	
+  return 0;
+}
+#else
+
+/*===================================================================*/
+/*                                                                   */
+/*               InfoNES_ReadRom() : Read ROM image file             */
+/*                                                                   */
+/*===================================================================*/
+int InfoNES_ReadRom( const char *pszFileName )
+{
+/*
+ *  Read ROM image file
+ *
+ *  Parameters
+ *    const char *pszFileName          (Read)
+ *
+ *  Return values
+ *     0 : Normally
+ *    -1 : Error
+ */
+
+    int fd;
+	UINT size;
+	fd = open((const char *)pszFileName,FA_READ);
+	if(fd<0)
+	{
+		deg_Printf("%s open failed!!!\n",pszFileName);
+	    return -1;
+	}
+	//read((FHANDLE)fd,(void *)buff,len);
+	//close((FHANDLE)fd);
+  /* Read ROM Header */
+  read((FHANDLE)fd,(void *)&NesHeader,sizeof(NesHeader));
+  if ( memcmp( NesHeader.byID, "NES\x1a", 4 ) != 0 )
+  {
+    /* not .nes file */
+	deg_Printf("%s not nes file!!!\n",pszFileName);
+	close((FHANDLE)fd);
+    return -1;
+  }
+
+  /* Clear SRAM */
+  memset( SRAM, 0, SRAM_SIZE );
+
+  /* If trainer presents Read Triner at 0x7000-0x71ff */
+  if ( NesHeader.byInfo1 & 4 )
+  {
+	 read((FHANDLE)fd,(void *)&SRAM[ 0x1000 ],512);
+  }
+
+  /* Allocate Memory for ROM Image */
+  ROM = (BYTE *)hal_sysMemMalloc( NesHeader.byRomSize * 0x4000,32 );
+  if(ROM==NULL)
+  {
+  	deg_Printf("malloc ROM [%d] failed!!!\n",NesHeader.byRomSize * 0x4000);
+	close((FHANDLE)fd);
+    return -1;
+  }
+  /* Read ROM Image */
+  read((FHANDLE)fd,(void *)ROM,NesHeader.byRomSize * 0x4000);
+  
+  if ( NesHeader.byVRomSize > 0 )
+  {
+    /* Allocate Memory for VROM Image */
+    VROM = (BYTE *)hal_sysMemMalloc( NesHeader.byVRomSize * 0x2000,32 );
+	if(VROM==NULL)
+    {
+  	   deg_Printf("malloc VROM [%d] failed!!!\n", NesHeader.byVRomSize * 0x2000);
+	   hal_sysMemFree( ROM );
+       ROM = NULL;
+	   close((FHANDLE)fd);
+       return -1;
+    }
+    /* Read VROM Image */
+	read((FHANDLE)fd,(void *)VROM,NesHeader.byVRomSize * 0x2000);
+  }
+	deg_Printf("load nes game [%s] seccuss\n",pszFileName);
+//  /* File close */
+	close((FHANDLE)fd);
+	
+  return 0;
+}
+
+#endif
+/*===================================================================*/
+/*                                                                   */
+/*           InfoNES_ReleaseRom() : Release a memory for ROM         */
+/*                                                                   */
+/*===================================================================*/
+void InfoNES_ReleaseRom()
+{
+/*
+ *  Release a memory for ROM
+ *
+ */
+
+  if ( ROM )
+  {
+    hal_sysMemFree( ROM );
+    ROM = NULL;
+  }
+
+  if ( VROM )
+  {
+    hal_sysMemFree( VROM );
+    VROM = NULL;
+  }
+}
+
+/*===================================================================*/
+/*                                                                   */
+/*      InfoNES_LoadFrame() :                                        */
+/*           Transfer the contents of work frame on the screen       */
+/*                                                                   */
+/*===================================================================*/
+extern void osdBuffCopy(unsigned char* buff,unsigned long wide,unsigned long high);
+__nes_code void InfoNES_LoadFrame()
+{
+/*
+ *  Transfer the contents of work frame on the screen
+ *
+ */
+// static u32 lastTime=0,printTime=0,maxTime=0;
+// u32 curTime;
+// curTime=XOSTimeGet();
+//  if(lastTime)
+// {
+//	 if(maxTime<curTime-lastTime)
+//		 maxTime=curTime-lastTime;
+//	 
+//	 if(curTime-printTime>2500)
+//	 {
+//		 printTime=curTime;
+//		 //deg_Printf("frame time:%d\n",curTime-lastTime);
+//	 }
+// }
+#if NES_DRAW_USE == NES_DRAW_USE_OSD
+	if(!savieFile){
+ 		osdBuffCopy(WorkFrame,NES_DISP_WIDTH,NES_DISP_HEIGHT);
+	}
+#else
+	static int cnt=0;
+	ax32xx_deWait();
+	// if(cnt>5)
+ 	{
+ 		cnt=0;
+		ax32xx_sysDcacheWback((u32)WorkFrame,NES_DISP_WIDTH*NES_DISP_HEIGHT*3/2);
+ 		dispLayerShow(DISP_LAYER_VIDEO,(INT32U)workBuffer,0,0,VIDEO_ROTATE);
+ 		disp_frame_t *p_lcd_buffer=NULL;
+    	//while(p_lcd_buffer==NULL)
+		{
+			p_lcd_buffer = (disp_frame_t *)dispLayerGetFrame(DISP_LAYER_VIDEO);
+		}
+		if(p_lcd_buffer)
+		{
+			hal_dispframeVideoCfg(p_lcd_buffer,0,0,NES_DISP_WIDTH,NES_DISP_HEIGHT);
+			u16 lcdW,lcdH;
+			hal_lcdGetResolution(&lcdW,&lcdH);
+			hal_dispframeVideoDestWH(p_lcd_buffer,lcdW,lcdH);
+			workBuffer=p_lcd_buffer;
+	    	WorkFrame=p_lcd_buffer->y_addr;
+		}
+ 	}
+ 	cnt++;	
+#endif
+//ax32xx_lcdIRQHandler();
+
+// lastTime=curTime;
+
+}
+
+
+void showInfoNesAddr(void)
+{
+	deg_Printf("\n==============\n");
+	deg_Printf("RAM:0x%x\n",RAM);
+	deg_Printf("SRAM:0x%x\n",SRAM);
+	deg_Printf("PPURAM:0x%x\n",PPURAM);
+	deg_Printf("SPRRAM:0x%x\n",SPRRAM);
+	deg_Printf("ROMBANK0:0x%x\n",ROMBANK0);
+	deg_Printf("ROMBANK1:0x%x\n",ROMBANK1);
+	deg_Printf("ROMBANK2:0x%x\n",ROMBANK2);
+	deg_Printf("ROMBANK3:0x%x\n",ROMBANK3);
+	deg_Printf("ROMBANK0:0x%x\n",ROMBANK[0]);
+	deg_Printf("ROMBANK1:0x%x\n",ROMBANK[1]);
+	deg_Printf("ROMBANK2:0x%x\n",ROMBANK[2]);
+	deg_Printf("ROMBANK3:0x%x\n",ROMBANK[3]);
+	deg_Printf("==============\n\n");
+}
+bool startWritFile=false;
+
+
+extern uint32 getKeyValForGame(uint32 keyGet);
+/*===================================================================*/
+/*                                                                   */
+/*             InfoNES_PadState() : Get a joypad state               */
+/*                                                                   */
+/*===================================================================*/
+__nes_code void InfoNES_PadState( DWORD *pdwPad1, DWORD *pdwPad2, DWORD *pdwSystem )
+{
+/*
+ *  Get a joypad state
+ *
+ *  Parameters
+ *    DWORD *pdwPad1                   (Write)
+ *      Joypad 1 State
+ *
+ *    DWORD *pdwPad2                   (Write)
+ *      Joypad 2 State
+ *
+ *    DWORD *pdwSystem                 (Write)
+ *      Input for InfoNES
+ *
+ */
+
+//#if (AX32_PLATFORM != AX3292B_NES)
+	*pdwPad1 = 0;
+#if 0
+   	if(getKeyValForGame(KEY_EVENT_POWER))
+	{
+		*pdwPad1 |= /*PAD_SYS_X*/PAD_SYS_S;
+		//debg("\n**************\n");
+	
+	}u32 key=getKeyValForGame(0);
+	if(key==KEY_EVENT_OK)
+    	*pdwPad1 |= PAD_SYS_S;
+	else if(key==KEY_EVENT_DOWN)
+		*pdwPad1 |= PAD_SYS_RIGHT;
+	else if(key==KEY_EVENT_UP)
+		*pdwPad1 |= PAD_SYS_LEFT;
+	else if(key==KEY_EVENT_MODE)
+	{
+		*pdwPad1 |= PAD_SYS_UP;
+		*pdwSystem |= PAD_SYS_QUIT;
+		savieFile=true;
+	}
+	else if(key==KEY_EVENT_MENU)
+	{
+		*pdwPad1 |= PAD_SYS_DOWN;
+		startWritFile=true;
+	}
+#else
+	 //if(getKeyValForGame(KEY_EVENT_POWER))
+	/* if(getKey()==KEY_EVENT_POWER)
+	{
+		///*pdwPad1 |= PAD_SYS_S;
+		*pdwSystem |= PAD_SYS_QUIT;
+		savieFile=true;
+		debg("\n---------return-------------------.\n");
+	}
+
+	u32 key=getKey();//getKeyValForGame(0);
+	if(key==KEY_EVENT_OKLONG)
+	{
+		*pdwPad1 |= PAD_SYS_S;
+		debg("\n---------start-------------------.\n");
+	}
+	else if(key==KEY_EVENT_DOWN)
+		*pdwPad1 |= PAD_SYS_DOWN;
+	else if(key==KEY_EVENT_UP)
+		*pdwPad1 |= PAD_SYS_UP;
+	else if(key==KEY_EVENT_MENU)
+		*pdwPad1 |= PAD_SYS_LEFT;
+	else if(key==KEY_EVENT_MODE)
+	{
+		*pdwPad1 |= PAD_SYS_RIGHT;
+		//*pdwSystem |= PAD_SYS_QUIT;
+		//savieFile=true;
+	}
+	else if(key==KEY_EVENT_OK)
+	{
+		*pdwPad1 |= PAD_SYS_A|PAD_SYS_B;
+		startWritFile=true;
+		debg("\n---------setting-------------------.\n");
+	}*/
+
+	
+	u32 key=getKey();
+	if(key==KEY_EVENT_POWER)
+	{
+		///*pdwPad1 |= PAD_SYS_S;
+		*pdwSystem |= PAD_SYS_QUIT;
+		savieFile=true;
+	}
+	if(key==KEY_EVENT_OKLONG)
+	{
+		*pdwPad1 |= PAD_SYS_S;
+	}
+	else if(key==KEY_EVENT_DOWN)
+	{
+		*pdwPad1 |= PAD_SYS_DOWN;
+	}
+	else if(key==KEY_EVENT_UP)
+	{
+		*pdwPad1 |= PAD_SYS_UP;
+	}
+	else if(key==KEY_EVENT_MENU)
+	{
+		*pdwPad1 |= PAD_SYS_LEFT;
+	}
+	else if(key==KEY_EVENT_MODE)
+	{
+		*pdwPad1 |= PAD_SYS_RIGHT;
+	}
+	else if(key==KEY_EVENT_OK)
+	{
+		*pdwPad1 |= PAD_SYS_A|PAD_SYS_B;
+		startWritFile=true;
+	}
+#endif
+#if 0
+
+	*pdwPad1 = 0;
+//   	if(getKeyValForGame(KEY_EVENT_POWER))
+//		*pdwPad1 |= PAD_SYS_X;
+	u32 key=getKeyValForGame(0);
+	u32 key_ch0, key_ch1;
+	key_ch0 = key&0xff;
+	key_ch1 = (key>>8)&0xff;
+	switch(key_ch0)
+	{
+		case 0					:	break;
+		case KEY_EVENT_OK		: 	*pdwPad1 |= PAD_SYS_S;					break;
+		case KEY_EVENT_UP		:	*pdwPad1 |= PAD_SYS_UP; 				break;
+		case KEY_EVENT_DOWN		:	*pdwPad1 |= PAD_SYS_DOWN; 				break;
+		case KEY_EVENT_LEFT		:	*pdwPad1 |= PAD_SYS_LEFT; 				break;
+		case KEY_EVENT_RIGHT	:	*pdwPad1 |= PAD_SYS_RIGHT; 				break;
+		case KEY_EVENT_UP_LEFT	:	*pdwPad1 |= PAD_SYS_UP|PAD_SYS_LEFT; 	break;
+		case KEY_EVENT_UP_RIGHT	:	*pdwPad1 |= PAD_SYS_UP|PAD_SYS_RIGHT; 	break;
+		case KEY_EVENT_DOWN_LEFT:	*pdwPad1 |= PAD_SYS_DOWN|PAD_SYS_LEFT; 	break;
+		case KEY_EVENT_DOWN_RIGHT:	*pdwPad1 |= PAD_SYS_DOWN|PAD_SYS_RIGHT; break;
+		default:break;
+	}
+	switch(key_ch1)
+	{
+		case 0					: break;
+		case KEY_EVENT_MODE		: *pdwSystem |= PAD_SYS_QUIT;		break;
+		case KEY_EVENT_A		: *pdwPad1 |= PAD_SYS_A;			break;
+		case KEY_EVENT_MENU		: *pdwPad1 |= PAD_SYS_A;			break;
+		case KEY_EVENT_B		: *pdwPad1 |= PAD_SYS_B;			break;
+		case KEY_EVENT_X		: *pdwPad1 |= PAD_SYS_X;			break;
+		case KEY_EVENT_Y		: *pdwPad1 |= PAD_SYS_S;			break;
+		case KEY_EVENT_A_B		: *pdwPad1 |= PAD_SYS_A|PAD_SYS_B;	break;
+		case KEY_EVENT_A_X		: *pdwPad1 |= PAD_SYS_A|PAD_SYS_X;	break;
+		case KEY_EVENT_B_X		: *pdwPad1 |= PAD_SYS_B|PAD_SYS_X;	break;
+		default: break;
+	}
+	
+#endif
+	*pdwPad1 = *pdwPad1 | ( *pdwPad1 << 8 );
+}
+
+/*===================================================================*/
+/*                                                                   */
+/*             InfoNES_MemoryCopy() : memcpy                         */
+/*                                                                   */
+/*===================================================================*/
+__nes_code void *InfoNES_MemoryCopy( void *dest, const void *src, int count )
+{
+/*
+ *  memcpy
+ *
+ *  Parameters
+ *    void *dest                       (Write)
+ *      Points to the starting address of the copied block's destination
+ *
+ *    const void *src                  (Read)
+ *      Points to the starting address of the block of memory to copy
+ *
+ *    int count                        (Read)
+ *      Specifies the size, in bytes, of the block of memory to copy
+ *
+ *  Return values
+ *    Pointer of destination
+ */
+#if 0
+/*u8* dest1;
+ u8* src1;
+ if((((u32)dest)&0x3)||(((u32)src)&0x3)||(count&0x3))
+{
+	dest1=dest;
+	src1=src;
+	while(count--)
+		*dest1++=*src1++;
+}
+ else*/
+{
+	//ax32xx_sysDcacheWback((u32)src,count);
+	ax32xx_sys_dma_memkick(dest,src,count);
+	//ax32xx_sysDcacheFlush((u32)dest,count);
+}
+ #else
+ //memcpy(dest,src, count);
+ u8 *src_b = src;
+ u8 *dest_b = dest;
+ while(count--)
+ {
+	*dest_b++ = *src_b++;
+ }
+ #endif
+ //ax32xx_mcpy1_sdram2gram_sdr(dest,src, count);
+  return dest;
+}
+
+
+/*===================================================================*/
+/*                                                                   */
+/*             InfoNES_MemorySet() : memset                          */
+/*                                                                   */
+/*===================================================================*/
+__nes_code void *InfoNES_MemorySet( void *dest,unsigned char c,unsigned int count )
+{
+/*
+ *  memset
+ *
+ *  Parameters
+ *    void *dest                       (Write)
+ *      Points to the starting address of the block of memory to fill
+ *
+ *    int c                            (Read)
+ *      Specifies the byte value with which to fill the memory block
+ *
+ *    int count                        (Read)
+ *      Specifies the size, in bytes, of the block of memory to fill
+ *
+ *  Return values
+ *    Pointer of destination
+ */
+//	memset(dest,c,count);
+  unsigned char *dest_b = dest;
+  while(count--)
+  {
+	*dest_b++ = c;  
+  }
+  return dest;
+}
+
+
+/*===================================================================*/
+/*                                                                   */
+/*        InfoNES_SoundInit() : Sound Emulation Initialize           */
+/*                                                                   */
+/*===================================================================*/
+void InfoNES_SoundInit( void ) 
+{
+//  sound_fd = 0;
+}
+
+//extern void playAudioFromRam(u8* buff,u32 size,u16 sampleRate);
+//static unsigned int samplesPerSync=0;
+//static unsigned int sampleRate=0;
+
+//#define FRAME_SIZE        (1024*16)
+//#define FRAME_NUM         5
+//#define BUFF_SIZE         (FRAME_SIZE*FRAME_NUM)
+//static unsigned int curPlayPos=0;
+//static unsigned int curStorePos=0;
+//static bool soundPlayStop=true;
+//static bool soundBuffUpdate=false;
+
+//#define SOUND_IN_BUFF() (curStorePos>=curPlayPos?(curStorePos-curPlayPos):(BUFF_SIZE-curPlayPos+curStorePos))
+//#define BUFF_REMAIN_SIZE()  (BUFF_SIZE-SOUND_IN_BUFF())
+
+pAPU_DEC_OP_T pAPU_dec_op;
+/*===================================================================*/
+/*                                                                   */
+/*        InfoNES_SoundOpen() : Sound Open                           */
+/*                                                                   */
+/*===================================================================*/
+
+extern void audioRecWrite(u8* buff,u32 size);
+extern void audioRecStart(INT32U samplerate);
+void audioRecStop(void);
+
+int InfoNES_SoundOpen( unsigned int samples_per_sync,unsigned int sample_rate ) 
+{
+//	samplesPerSync=samples_per_sync;
+//	sampleRate=sample_rate;
+	deg_Printf("sound sampleRate:%d\n",sample_rate);
+	deg_Printf("sound samplesPerSync:%d\n",samples_per_sync);
+	startWritFile=false;
+	savieFile=false;
+		//audioRecStart(sample_rate);
+	
+	hal_dacSetVolume(80);
+	memset(&pAPU_dec_op,0,sizeof(pAPU_DEC_OP_T));
+	pAPU_dec_op.pAPU_SampleRate = sample_rate;
+	pAPU_dec_op.pAPU_SamplesPerSync = samples_per_sync;
+	pAPU_dec_op.pAPU_buflen = samples_per_sync*2*pAPU_FRAME_NUM;
+	pAPU_dec_op.pAPU_buf = hal_sysMemMalloc(pAPU_dec_op.pAPU_buflen,32);
+	if(pAPU_dec_op.pAPU_buf == NULL)
+	{
+		debg("pAPU buffer malloc fail\n");
+		APU_Mute = 1;  //
+		return 0;
+	}
+	pAPU_dec_op.sync = 0;
+	pAPU_dec_op.sync_next = 1;
+	pAPU_dec_op.pAPU_Framelen = samples_per_sync*2;
+	hal_streamInit(&pAPU_dec_op.pAPU, pAPU_dec_op.pAPUNode, pAPU_FRAME_NUM/FRAME_COMBINE,(u32)pAPU_dec_op.pAPU_buf, pAPU_dec_op.pAPU_buflen*FRAME_COMBINE);
+
+	/*
+	if(soundBuff)
+	{
+	hal_sysMemFree(soundBuff);
+		soundBuff=NULL;
+	}
+	soundBuff=hal_sysMemMalloc( BUFF_SIZE*2,32 );
+	curPlayPos=0;
+	curStorePos=0;
+	 */
+	return 1;
+}
+
+/*===================================================================*/
+/*                                                                   */
+/*        InfoNES_SoundClose() : Sound Close                         */
+/*                                                                   */
+/*===================================================================*/
+void InfoNES_SoundClose( void ) 
+{
+	if(pAPU_dec_op.pAPU_buf)
+	{
+		hal_sysMemFree(pAPU_dec_op.pAPU_buf);
+		pAPU_dec_op.pAPU_buf = NULL;
+	}
+	/*
+	if(soundBuff)
+	{
+		hal_sysMemFree(soundBuff);
+		soundBuff=NULL;
+	}*/
+}
+
+void *InfoNes_pAPU_StreamOut(void)
+{
+	u32 buff,size;
+	s32 syn_cnt, syn_cnt_next;
+
+
+	if(hal_streamOut(&pAPU_dec_op.pAPU,&buff,&size,&syn_cnt, &syn_cnt_next)<0)
+		return NULL;
+	//debg("[-%d]\n",syn_cnt);
+	//debg("[1:%d]",syn_cnt);	
+	if(size == 0){
+		hal_streamfree(&pAPU_dec_op.pAPU);
+		debg("pAPU =0\n");
+		return NULL;
+	}
+		
+	return ((void *)buff);
+}
+/*
+void gameDacISR(int flag)
+{
+	if(flag&DAC_INT_PEND)
+    {
+		hal_dacFlush(FRAME_SIZE*2);
+		return ;
+    }
+	if(flag&DAC_INT_HALF)
+	{
+		
+		if(SOUND_IN_BUFF()>=FRAME_SIZE&&soundBuffUpdate==false)
+		{
+			soundPlayStop=false;
+			if(curPlayPos>=BUFF_SIZE)
+			{
+				ax32xx_sysDcacheWback((u32)soundBuff,FRAME_SIZE*2);
+				hal_dacSetBuffer(soundBuff,FRAME_SIZE*2);
+				curPlayPos=FRAME_SIZE;
+			}
+			else
+			{
+				ax32xx_sysDcacheWback((u32)(soundBuff+curPlayPos),FRAME_SIZE*2);
+				hal_dacSetBuffer(soundBuff+curPlayPos,FRAME_SIZE*2);
+				curPlayPos+=FRAME_SIZE;
+			}
+			
+		}
+
+	}
+	else if(flag&DAC_INT_EMPTY)
+	{
+		hal_dacPlayStop();
+		soundPlayStop=true;
+	}
+}*/
+/*===================================================================*/
+/*                                                                   */
+/*            InfoNES_SoundOutput() : Sound Output 5 Waves           */           
+/*                                                                   */
+/*===================================================================*/
+/*
+void InfoNES_SoundOutput( int samples, BYTE *wave1, BYTE *wave2, BYTE *wave3, BYTE *wave4, BYTE *wave5 )
+{
+	unsigned int i,remainBuffLen,copySize;
+	if(soundBuff==NULL)
+		return;
+	remainBuffLen=BUFF_REMAIN_SIZE();
+	if(remainBuffLen<samples)
+		samples=remainBuffLen;
+	copySize=BUFF_SIZE-curStorePos;
+	if(copySize>samples)
+		copySize=samples;
+	soundBuffUpdate=true;
+	for ( i = 0; i < copySize; i++)
+		soundBuff[curStorePos++] =((WORD)wave1[i]+(WORD)wave2[i]+(WORD)wave3[i ]+(WORD)wave4[i])<<5;//((WORD)wave1[i]+(WORD)wave2[i]+(WORD)wave3[i]+(WORD)wave4[i])<<4;
+	if(copySize<samples)
+	{
+		curStorePos=0;
+		for ( i = copySize; i < samples; i++)
+			soundBuff[curStorePos++] =((WORD)wave1[i]+(WORD)wave2[i]+(WORD)wave3[i ]+(WORD)wave4[i])<<5;//((WORD)wave1[i]+(WORD)wave2[i]+(WORD)wave3[i]+(WORD)wave4[i])<<4;
+	}
+	soundBuffUpdate=false;
+	
+	if(soundPlayStop==true&&SOUND_IN_BUFF()>=FRAME_SIZE)
+	{
+		soundPlayStop=false;
+		deg_Printf("start play sound:%d,samples:%d\n",curPlayPos,samples);
+		hal_dacCallBackRegister(gameDacISR);
+		if(curPlayPos>=BUFF_SIZE)
+		{
+			ax32xx_sysDcacheWback((u32)soundBuff,FRAME_SIZE*2);
+			hal_dacPlayStart(sampleRate,soundBuff,FRAME_SIZE*2);
+			curPlayPos=FRAME_SIZE;
+		}
+		else
+		{
+			ax32xx_sysDcacheWback((u32)(soundBuff+curPlayPos),FRAME_SIZE*2);
+			hal_dacPlayStart(sampleRate,soundBuff+curPlayPos,FRAME_SIZE*2);
+			curPlayPos+=FRAME_SIZE;
+		}
+	}
+	//48000,44100,3200,0,2400,22050,16000,0,12000,11025,8000 sampleRate
+#if 0
+	unsigned int i;
+	static WORD wave[1000];
+	static u32 size=0;
+	if(startWritFile)
+	{
+		for ( i = 0; i < samples; i++)
+		{
+			wave[i] =((WORD)wave1[i]+(WORD)wave2[i]+(WORD)wave3[i ]+(WORD)wave4[i])<<5;
+		}
+		audioRecWrite(wave,samples<<1);
+		size+=samples;
+		if(size>sampleRate*10)
+		{
+			startWritFile=false;
+			audioRecStop();
+			deg_Printf("audio size:%d\n",size);
+		}
+	}
+#endif
+#if 0
+	unsigned int i;
+	static WORD wave[1000];
+	static u32 size=0;
+	if(startWritFile)
+	{
+		for ( i = 0; i < samples; i++)
+		{
+			wave[i] =((WORD)wave1[i]+(WORD)wave2[i]+(WORD)wave3[i ]+(WORD)wave4[i])<<5;
+		}
+	}
+    playAudioFromRam(wave,samples<<1,sampleRate);
+#endif
+
+}
+*/
+/*===================================================================*/
+/*                                                                   */
+/*            InfoNES_Wait() : Wait Emulation if required            */
+/*                                                                   */
+/*===================================================================*/
+void InfoNES_Wait() {}
+
+/*===================================================================*/
+/*                                                                   */
+/*            InfoNES_MessageBox() : Print System Message            */
+/*                                                                   */
+/*===================================================================*/
+void InfoNES_MessageBox( char *pszMsg, ... )
+{
+//    va_list args;
+//    va_start( args, pszMsg );
+//    printf( pszMsg, args );	
+//    va_end( args );
+}
+
+

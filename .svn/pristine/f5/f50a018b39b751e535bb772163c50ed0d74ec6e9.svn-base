@@ -1,0 +1,1564 @@
+/*===================================================================*/
+/*                                                                   */
+/*  InfoNES_pAPU.cpp : InfoNES Sound Emulation Function              */
+/*                                                                   */
+/*  2000/05/29  InfoNES Project ( based on DarcNES and NesterJ )     */
+/*                                                                   */
+/*===================================================================*/
+
+/*-------------------------------------------------------------------*/
+/*  Include files                                                    */
+/*-------------------------------------------------------------------*/
+#include "K6502.h"
+#include "K6502_rw.h"
+#include "InfoNES_System.h"
+#include "InfoNES_pAPU.h"
+
+/*-------------------------------------------------------------------*/
+/*   APU Event resources                                             */
+/*-------------------------------------------------------------------*/
+
+ApuEvent_t ApuEventQueue[ APU_EVENT_MAX ];
+BYTE ApuEventType[21] = 
+{
+	APUET_W_C1A,
+	APUET_W_C1B,
+	APUET_W_C1C,
+	APUET_W_C1D,
+	APUET_W_C2A,
+	APUET_W_C2B,
+	APUET_W_C2C,
+	APUET_W_C2D,
+	APUET_W_C3A,
+	APUET_W_C3B,
+	APUET_W_C3C,
+	APUET_W_C3D,
+	APUET_W_C4A,
+	APUET_W_C4B,
+	APUET_W_C4C,
+	APUET_W_C4D,
+	APUET_W_C5A,
+	APUET_W_C5B,
+	APUET_W_C5C,
+	APUET_W_C5D,
+	APUET_W_CTRL,
+};
+int  cur_event;
+WORD entertime;
+WORD* soundBuff=NULL;
+
+/*-------------------------------------------------------------------*/
+/*   APU Register Write Functions                                    */
+/*-------------------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------------*/
+/*   APU resources                                                   */
+/*-------------------------------------------------------------------*/
+
+//WORD wave_buffers[5][735];      /* 44100 / 60 = 735 samples per sync */
+typedef struct WAV_BUFFER_S
+{
+	WORD buffer[5][735];
+}WAV_BUFFER_T;
+WAV_BUFFER_T *wave_buffers = NULL;
+//WORD wave_buffers[2][735];      /* 44100 / 60 = 735 samples per sync */
+BYTE ApuCtrl;
+BYTE ApuCtrlNew;
+
+/*-------------------------------------------------------------------*/
+/*   APU Quality resources                                           */
+/*-------------------------------------------------------------------*/
+
+int ApuQuality;
+
+DWORD ApuPulseMagic;
+DWORD ApuTriangleMagic;
+DWORD ApuNoiseMagic;
+unsigned int ApuSamplesPerSync;
+unsigned int ApuCyclesPerSample;
+unsigned int ApuSampleRate;
+int ApuCycleRate;
+
+struct ApuQualityData_t 
+{
+  DWORD pulse_magic;
+  DWORD triangle_magic;
+  DWORD noise_magic;
+  unsigned int samples_per_sync;
+  unsigned int cycles_per_sample;
+  unsigned int sample_rate;
+  DWORD cycle_rate;
+} const ApuQual[] = {
+  { 0xa2567000, 0xa2567000, 0xa2567000, 183, 164, 11025, 1062658 },
+  { 0x512b3800, 0x512b3800, 0x512b3800, 367,  82, 22050, 531329 },
+  { 0x289d9c00, 0x289d9c00, 0x289d9c00, 735,  41, 44100, 265664 },
+
+};
+
+/*-------------------------------------------------------------------*/
+/*  Rectangle Wave #1 resources                                      */
+/*-------------------------------------------------------------------*/
+BYTE ApuC1a, ApuC1b, ApuC1c, ApuC1d;
+
+
+DWORD ApuC1Skip;
+DWORD ApuC1Index;
+
+BYTE  ApuC1EnvVol;
+
+int ApuC1Atl;
+int ApuC1EnvPhase;
+int ApuC1SweepPhase;
+
+ 
+DWORD ApuC1Freq;  
+int Apu_output_vol1; 
+int Apu_phaseacc_1;
+BYTE Apu_adder_1;
+BYTE Apu_duty_flip_1;
+int Apu_sweep_delay_1;
+int Apu_env_delay_1;
+/*-------------------------------------------------------------------*/
+/*  Rectangle Wave #2 resources                                      */
+/*-------------------------------------------------------------------*/
+BYTE ApuC2a, ApuC2b, ApuC2c, ApuC2d;
+
+
+DWORD ApuC2Skip;
+DWORD ApuC2Index;
+BYTE  ApuC2EnvVol;
+
+
+int ApuC2Atl;
+int ApuC2EnvPhase;
+int ApuC2SweepPhase;
+
+
+DWORD ApuC2Freq;   
+int Apu_output_vol2; 
+int Apu_phaseacc_2;
+BYTE Apu_adder_2;
+BYTE Apu_duty_flip_2;
+int Apu_sweep_delay_2;
+int Apu_env_delay_2;
+/*-------------------------------------------------------------------*/
+/*  Triangle Wave resources                                          */
+/*-------------------------------------------------------------------*/
+BYTE ApuC3a, ApuC3b, ApuC3c, ApuC3d;
+
+DWORD ApuC3Skip;
+DWORD ApuC3Index;
+
+
+
+BYTE  ApuC3CounterStarted;
+
+int  ApuC3Atl;
+int ApuC3Llc;                             /* Linear Length Counter */
+int  ApuC3WriteLatency;
+
+
+int Apu_output_vol3; 
+int Apu_phaseacc_3;
+BYTE Apu_adder_3;
+
+/*-------------------------------------------------------------------*/
+/*  Noise resources                                                  */
+/*-------------------------------------------------------------------*/
+DWORD ApuC4Freq;  
+BYTE ApuC4a, ApuC4b, ApuC4c, ApuC4d;
+
+DWORD ApuC4Sr;                                     /* Shift register */
+DWORD ApuC4Fdc;                          /* Frequency divide counter */
+DWORD ApuC4Skip;
+DWORD ApuC4Index;
+BYTE  ApuC4EnvVol;
+
+
+int ApuC4Atl;
+int ApuC4EnvPhase;
+
+
+#ifdef REALTIME_NOISE
+BYTE Apu_noise_xor_tap;
+#else
+BYTE Apu_noise_short_sample;
+int  Apu_noise_cur_pos;
+#endif
+int Apu_output_vol4; 
+int Apu_phaseacc_4;
+BYTE Apu_adder_4;
+
+int Apu_env_delay_4;
+/*-------------------------------------------------------------------*/
+/*  DPCM resources                                                   */
+/*-------------------------------------------------------------------*/
+BYTE  ApuC5Reg[4];
+BYTE  ApuC5Enable;
+BYTE  ApuC5Looping;
+BYTE  ApuC5CurByte;
+BYTE  ApuC5DpcmValue;
+BYTE  ApyC5_irq_occurred;
+BYTE  ApyC5_irq_gen;
+int Apu_output_vol5;
+int   ApuC5Freq;
+int   ApuC5Phaseacc;
+
+WORD  ApuC5Address, ApuC5CacheAddr;
+int   ApuC5DmaLength, ApuC5CacheDmaLength;
+ 
+
+
+/*-------------------------------------------------------------------*/
+/*  Wave Data                                                        */
+/*-------------------------------------------------------------------*/
+//BYTE pulse_25[0x20] = {
+//  0x11, 0x11, 0x11, 0x11,
+//  0x11, 0x11, 0x11, 0x11,
+//  0x00, 0x00, 0x00, 0x00,
+//  0x00, 0x00, 0x00, 0x00,
+//  0x00, 0x00, 0x00, 0x00,
+//  0x00, 0x00, 0x00, 0x00,
+//  0x00, 0x00, 0x00, 0x00,
+//  0x00, 0x00, 0x00, 0x00,
+//};
+//
+//BYTE pulse_50[0x20] = {
+//  0x11, 0x11, 0x11, 0x11,
+//  0x11, 0x11, 0x11, 0x11,
+//  0x11, 0x11, 0x11, 0x11,
+//  0x11, 0x11, 0x11, 0x11,
+//  0x00, 0x00, 0x00, 0x00,
+//  0x00, 0x00, 0x00, 0x00,
+//  0x00, 0x00, 0x00, 0x00,
+//  0x00, 0x00, 0x00, 0x00,
+//};
+//
+//BYTE pulse_75[0x20] = {
+//  0x11, 0x11, 0x11, 0x11,
+//  0x11, 0x11, 0x11, 0x11,
+//  0x11, 0x11, 0x11, 0x11,
+//  0x11, 0x11, 0x11, 0x11,
+//  0x11, 0x11, 0x11, 0x11,
+//  0x11, 0x11, 0x11, 0x11,
+//  0x00, 0x00, 0x00, 0x00,
+//  0x00, 0x00, 0x00, 0x00,
+//};
+//
+//BYTE pulse_87[0x20] = {
+//  0x11, 0x11, 0x11, 0x11,
+//  0x11, 0x11, 0x11, 0x11,
+//  0x11, 0x11, 0x11, 0x11,
+//  0x11, 0x11, 0x11, 0x11,
+//  0x11, 0x11, 0x11, 0x11,
+//  0x11, 0x11, 0x11, 0x11,
+//  0x11, 0x11, 0x11, 0x11,
+//  0x00, 0x00, 0x00, 0x00,
+//};
+//
+//BYTE triangle_50[0x20] = {
+//  0x00, 0x10, 0x20, 0x30,
+//  0x40, 0x50, 0x60, 0x70,
+//  0x80, 0x90, 0xa0, 0xb0,
+//  0xc0, 0xd0, 0xe0, 0xf0,
+//  0xff, 0xef, 0xdf, 0xcf,
+//  0xbf, 0xaf, 0x9f, 0x8f,
+//  0x7f, 0x6f, 0x5f, 0x4f,
+//  0x3f, 0x2f, 0x1f, 0x0f,
+//};
+//
+//
+//BYTE *pulse_waves[4] = {
+//  pulse_87, pulse_75, pulse_50, pulse_25,
+//};
+
+/*-------------------------------------------------------------------*/
+/*  Active Time Left Data                                            */
+/*-------------------------------------------------------------------*/
+/* vblank长度表用于矩形、三角形、噪音 */
+const BYTE ApuAtl[0x20] = 
+{
+  5, 127, 10, 1, 19,  2, 40,  3, 80,  4, 30,  5, 7,  6, 13,  7,
+  6,   8, 12, 9, 24, 10, 48, 11, 96, 12, 36, 13, 8, 14, 16, 15,
+};
+
+/*-------------------------------------------------------------------*/
+/* Frequency Limit of Rectangle Channels                             */
+/*-------------------------------------------------------------------*/
+/* 矩形通道的频率限制 */
+const WORD ApuFreqLimit[8] = 
+{
+   0x3FF, 0x555, 0x666, 0x71C, 0x787, 0x7C1, 0x7E0, 0x7F0
+};
+
+/*-------------------------------------------------------------------*/
+/* Noise Frequency Lookup Table                                      */
+/*-------------------------------------------------------------------*/
+/* 噪声频率查找表 */
+const DWORD ApuNoiseFreq[ 16 ] =
+{
+     4,    8,   16,   32,   64,   96,  128,  160,
+   202,  254,  380,  508,  762, 1016, 2034, 4068
+};
+
+/*-------------------------------------------------------------------*/
+/* DMC Transfer Clocks Table                                          */
+/*-------------------------------------------------------------------*/
+const DWORD ApuDpcmCycles[ 16 ] = 
+{
+  428, 380, 340, 320, 286, 254, 226, 214,
+  190, 160, 142, 128, 106,  85,  72,  54
+};
+/* pos /底片的比率为矩形波脉冲 */
+const BYTE duty_lut[4] = { 2, 4, 8, 12 };
+
+
+int decay_lut[16];
+int vbl_lut[32];
+int trilength_lut[128];
+
+//noise lookups for both modes */
+//噪音查找两种模式 */
+#ifndef REALTIME_NOISE     //1
+static char noise_long_lut[APU_NOISE_32K];//APU_NOISE_32K  0x7FFF
+static char noise_short_lut[APU_NOISE_93];//APU_NOISE_93   93
+#endif /* !REALTIME_NOISE */
+
+
+#ifdef REALTIME_NOISE    //1
+__nes_code char shift_register15(u8 xor_tap)
+{
+   static int sreg = 0x4000;
+   int bit0, tap, bit14;
+
+   bit0 = sreg & 1;
+   tap = (sreg & xor_tap) ? 1 : 0;
+   bit14 = (bit0 ^ tap);
+   sreg >>= 1;
+   sreg |= (bit14 << 14);
+   return (bit0 ^ 1);
+}
+#else /* !REALTIME_NOISE */
+__nes_code void shift_register15(char *buf, int count)
+{
+   static int sreg = 0x4000;
+   int bit0, bit1, bit6, bit14;
+
+   if (count == APU_NOISE_93)
+   {
+      while (count--)
+      {
+         bit0 = sreg & 1;
+         bit6 = (sreg & 0x40) >> 6;
+         bit14 = (bit0 ^ bit6);
+         sreg >>= 1;
+         sreg |= (bit14 << 14);
+         *buf++ = bit0 ^ 1;
+      }
+   }
+   else /* 32K noise */
+   {
+      while (count--)
+      {
+         bit0 = sreg & 1;
+         bit1 = (sreg & 2) >> 1;
+         bit14 = (bit0 ^ bit1);
+         sreg >>= 1;
+         sreg |= (bit14 << 14);
+         *buf++ = bit0 ^ 1;
+      }
+   }
+}
+#endif /* !REALTIME_NOISE */
+/*===================================================================*/
+/*                                                                   */
+/*      ApuRenderingWave1() : Rendering Rectangular Wave #1          */
+/*                                                                   */
+/*===================================================================*/
+
+/*-------------------------------------------------------------------*/
+/* Write registers of rectangular wave #1                            */
+/*-------------------------------------------------------------------*/
+
+__nes_code int ApuWriteWave1( int cycles, int event )
+{
+    /* APU Reg Write Event */
+    while ( ( event < cur_event ) && ( ApuEventQueue[event].time < cycles ) ) 
+    {
+      if ( ( ApuEventQueue[event].type & APUET_MASK ) == APUET_C1 ) 
+      {
+			switch ( ApuEventQueue[event].type & 0x03 ) 
+			{
+				case 0:
+				  ApuC1a    = ApuEventQueue[event].data;
+//				  ApuC1Wave = pulse_waves[ ApuC1DutyCycle >> 6 ];
+				  Apu_duty_flip_1 = duty_lut[ApuC1DutyCycle >> 6 ];
+				  Apu_env_delay_1 = decay_lut[ApuC1a&0x0F];
+				  break;
+
+				case 1:
+				  ApuC1b    = ApuEventQueue[event].data; 
+				  Apu_sweep_delay_1 = decay_lut[(ApuC1b >> 4) & 7];
+				  break;
+				  
+				case 2:
+				  ApuC1c = ApuEventQueue[event].data;
+				  ApuC1Freq = ( ( ( (WORD)ApuC1d & 0x07 ) << 8 ) + ApuC1c );
+
+				  ApuC1Atl = vbl_lut[ ( ApuC1d & 0xf8 ) >> 3 ];
+
+				 
+				  break;
+
+				case 3:
+				  ApuC1d = ApuEventQueue[event].data;
+				  ApuC1Freq = ( ( ( (WORD)ApuC1d & 0x07 ) << 8 ) + ApuC1c );
+
+				  ApuC1Atl = vbl_lut[ ( ApuC1d & 0xf8 ) >> 3 ];
+				  ApuC1EnvVol = 0;
+				  Apu_adder_1 = 0;
+
+				
+				  
+				  break;
+			}
+      } 
+      else if ( ApuEventQueue[event].type == APUET_W_CTRL ) 
+      {
+			ApuCtrlNew = ApuEventQueue[event].data;
+
+			if( !(ApuEventQueue[event].data&(1<<0)) ) {
+			  ApuC1Atl = 0;
+			}
+	  }
+	  event++;
+	}
+	return event;
+}
+
+/*-------------------------------------------------------------------*/
+/* Rendering rectangular wave #1                                     */
+/*-------------------------------------------------------------------*/
+
+/* RECTANGLE WAVE
+** ==============
+** reg0: 0-3=volume, 4=envelope, 5=hold, 6-7=duty cycle
+** reg1: 0-2=sweep shifts, 3=sweep inc/dec, 4-6=sweep length, 7=sweep on
+** reg2: 8 bits of freq
+** reg3: 0-2=high freq, 7-4=vbl length counter
+*/
+__nes_code void ApuRenderingWave1_improve( void )
+{	
+  int output  = 0;
+  int cycles = 0;
+  int event = 0;
+#ifdef APU_OVERSAMPLE   //1
+   int num_times;
+   int total;
+#endif /* APU_OVERSAMPLE */
+  /* note: 41 CPU cycles occur between increments of i */
+  ApuCtrlNew = ApuCtrl;
+
+  unsigned int i;	
+  for ( i = 0; i < ApuSamplesPerSync; i++ ) 
+  {
+  
+    /* Write registers */
+    cycles += APU_FROM_FIXED(ApuCycleRate);//ApuCyclesPerSample;  ApuCycleRate
+    event = ApuWriteWave1( cycles, event );
+	output = 0;
+	
+	//add
+	APU_VOLUME_DECAY(Apu_output_vol1);
+	if( 0== ApuC1Atl)
+	{
+		//wave_buffers[0][i] = Apu_output_vol1;
+		goto NEXT;
+	}
+	
+	if(!ApuC1Hold)
+		ApuC1Atl--;
+	
+    /* Envelope decay at a rate of ( Envelope Delay + 1 ) / 240 secs */
+    ApuC1EnvPhase -= 4;
+	while ( ApuC1EnvPhase < 0 )
+	{
+		 if(ApuC1EnvPhase == 0) break;
+		 ApuC1EnvPhase += Apu_env_delay_1;
+
+		 if ( ApuC1Hold )
+		 {
+		
+		   ApuC1EnvVol = ( ApuC1EnvVol + 1 ) & 0x0f;
+		 } 
+		 else if ( ApuC1EnvVol < 0x0f )
+		 {
+		   ApuC1EnvVol++;
+		 }
+	}
+
+    /*
+     * TODO: using a table of max frequencies is not technically
+     * clean, but it is fast and (or should be) accurate
+     */
+    if ( ApuC1Freq < 8 || ( !ApuC1SweepIncDec && ApuC1Freq > ApuC1FreqLimit ) )
+    {
+		//wave_buffers[0][i] = Apu_output_vol1;
+		goto NEXT;
+    }
+	
+    /* Frequency sweeping at a rate of ( Sweep Delay + 1) / 120 secs */
+    if ( ApuC1SweepOn && ApuC1SweepShifts )     
+    {
+	
+		ApuC1SweepPhase -= 2;           /* 120/60 */
+		while ( ApuC1SweepPhase < 0 )
+		{
+			ApuC1SweepPhase += Apu_sweep_delay_1;
+
+			if ( ApuC1SweepIncDec ) /* ramp up */
+			{
+			/* Rectangular #1 */
+			//debg("2");
+			ApuC1Freq += ~( ApuC1Freq >> ApuC1SweepShifts );
+			} else {
+			/* ramp down */
+			//debg("3");
+			ApuC1Freq +=  ( ApuC1Freq >> ApuC1SweepShifts );
+			}
+		}
+//		if ( ApuC1Freq ) {
+//			//ApuC1Skip = ( ApuPulseMagic << 1 ) / ApuC1Freq;
+//			ApuC1Skip = ApuPulseMagic / (ApuC1Freq >>1);
+//		}
+    }
+	Apu_phaseacc_1 -= (ApuCycleRate);
+	if(Apu_phaseacc_1 >= 0)
+	{
+		//wave_buffers[0][i] = Apu_output_vol1;
+		
+		goto NEXT;
+	}
+	
+	//debg("3");
+	//modify
+#ifdef APU_OVERSAMPLE
+	num_times = total = 0;
+	if(ApuC1Env)
+	{
+		output = (DWORD)ApuC1Vol<<8;
+	}
+	else
+	{
+		output =((DWORD)ApuC1EnvVol^0x0f)<<8;
+	}
+#endif	
+	while(Apu_phaseacc_1<0)
+	{
+		Apu_phaseacc_1 += APU_TO_FIXED(ApuC1Freq+1);
+		Apu_adder_1 = (Apu_adder_1+1)&0x0F;
+		
+#ifdef APU_OVERSAMPLE  
+		if (Apu_adder_1 < Apu_duty_flip_1)
+			 total += output;
+		  else
+			 total -= output;
+
+		  num_times++;
+#endif
+	}
+#ifdef APU_OVERSAMPLE 
+	Apu_output_vol1 = total / num_times;
+#else
+	if ( ApuC1Env ) 
+		output = (DWORD)ApuC1Vol << 8;
+	else
+		output =((DWORD)ApuC1EnvVol^0x0f)<<8;
+	if(0 == Apu_adder_1 )
+		Apu_output_vol1 = output;
+	else if(Apu_adder_1 == Apu_duty_flip_1)
+		Apu_output_vol1 -= output;
+	
+
+	
+#endif
+NEXT:	
+	if (Apu_output_vol1 > 0x7FFF) wave_buffers->buffer[0][i] = 0x7FFF;
+	else if (Apu_output_vol1 < -0x8000) wave_buffers->buffer[0][i] = -0x8000;
+	else	 wave_buffers->buffer[0][i]  = (DWORD)Apu_output_vol1;	
+	soundBuff[i] = wave_buffers->buffer[0][i];
+	
+  }	
+  
+}
+/*===================================================================*/
+/*                                                                   */
+/*      ApuRenderingWave2() : Rendering Rectangular Wave #2          */
+/*                                                                   */
+/*===================================================================*/
+
+/*-------------------------------------------------------------------*/
+/* Write registers of rectangular wave #2                           */
+/*-------------------------------------------------------------------*/
+
+__nes_code int ApuWriteWave2( int cycles, int event )
+{
+    /* APU Reg Write Event */
+    while ( ( event < cur_event ) && ( ApuEventQueue[event].time < cycles ) ) 
+    {
+      if ( ( ApuEventQueue[event].type & APUET_MASK ) == APUET_C2 ) 
+      {
+	switch ( ApuEventQueue[event].type & 0x03 ) 
+        {
+	case 0:
+	  ApuC2a    = ApuEventQueue[event].data;
+	  Apu_duty_flip_2 = duty_lut[ApuC2DutyCycle >> 6 ];
+	  Apu_env_delay_2 = decay_lut[ApuC2a&0x0F];
+	  break;
+
+	case 1:
+	  ApuC2b    = ApuEventQueue[event].data; 
+	  Apu_sweep_delay_2 = decay_lut[(ApuC2b >> 4) & 7];
+	  break;
+	  
+	case 2:
+		ApuC2c = ApuEventQueue[event].data;
+		ApuC2Freq = ( ( ( (WORD)ApuC2d & 0x07 ) << 8 ) + ApuC2c );	  
+		ApuC2Atl = vbl_lut[ ( ApuC2d & 0xf8 ) >> 3 ];
+
+	  break;
+
+	case 3:
+		ApuC2d = ApuEventQueue[event].data;
+		ApuC2Freq = ( ( ( (WORD)ApuC2d & 0x07 ) << 8 ) + ApuC2c );
+	    ApuC2Atl = vbl_lut[ ( ApuC2d & 0xf8 ) >> 3 ];
+		ApuC2EnvVol = 0;
+		Apu_adder_2 = 0;
+//	#endif
+	  break;
+	}
+      } 
+      else if ( ApuEventQueue[event].type == APUET_W_CTRL ) 
+      {
+	ApuCtrlNew = ApuEventQueue[event].data;
+
+	if( !(ApuEventQueue[event].data&(1<<1)) ) {
+	  ApuC2Atl = 0;
+	}
+      }
+      event++;
+    }
+    return event;
+}
+
+/*-------------------------------------------------------------------*/
+/* Rendering rectangular wave #2                                     */
+/*-------------------------------------------------------------------*/
+__nes_code void ApuRenderingWave2_improve( void )
+{
+  int output  = 0;
+  int cycles = 0;
+  int event = 0;
+#ifdef APU_OVERSAMPLE   //1
+   int num_times;
+   int total;
+#endif /* APU_OVERSAMPLE */
+  /* note: 41 CPU cycles occur between increments of i */
+  ApuCtrlNew = ApuCtrl;
+
+  unsigned int i;	
+  for ( i = 0; i < ApuSamplesPerSync; i++ ) 
+  {
+  
+    /* Write registers */
+    cycles += APU_FROM_FIXED(ApuCycleRate);//ApuCyclesPerSample;  ApuCycleRate
+    event = ApuWriteWave2( cycles, event );
+	output = 0;
+	
+	//add
+	APU_VOLUME_DECAY(Apu_output_vol2);
+	if( 0== ApuC2Atl)
+	{
+		//wave_buffers[0][i] = Apu_output_vol1;
+		goto NEXT;
+	}
+	
+	if(!ApuC2Hold)
+		ApuC2Atl--;
+	
+    /* Envelope decay at a rate of ( Envelope Delay + 1 ) / 240 secs */
+    ApuC2EnvPhase -= 4;
+	while ( ApuC2EnvPhase < 0 )
+	{
+		 if(ApuC2EnvPhase == 0) break;
+		 ApuC2EnvPhase += Apu_env_delay_2;
+
+		 if ( ApuC2Hold )
+		 {
+		   ApuC2EnvVol = ( ApuC2EnvVol + 1 ) & 0x0f;
+		 } 
+		 else if ( ApuC2EnvVol < 0x0f )
+		 {
+		   ApuC2EnvVol++;
+		 }
+	}
+
+    /*
+     * TODO: using a table of max frequencies is not technically
+     * clean, but it is fast and (or should be) accurate
+     */
+    if ( ApuC2Freq < 8 || ( !ApuC2SweepIncDec && ApuC2Freq > ApuC2FreqLimit ) )
+    {
+		//wave_buffers[0][i] = Apu_output_vol1;
+		goto NEXT;
+    }
+	
+    /* Frequency sweeping at a rate of ( Sweep Delay + 1) / 120 secs */
+    if ( ApuC2SweepOn && ApuC2SweepShifts )     
+    {
+		ApuC2SweepPhase -= 2;           /* 120/60 */
+		while ( ApuC2SweepPhase < 0 )
+		{
+			ApuC2SweepPhase += Apu_sweep_delay_2;
+
+			if ( ApuC2SweepIncDec ) /* ramp up */
+			{
+			/* Rectangular #1 */
+			ApuC2Freq -= ~( ApuC2Freq >> ApuC2SweepShifts );
+			} else {
+			/* ramp down */
+			ApuC2Freq +=  ( ApuC2Freq >> ApuC2SweepShifts );
+			}
+		}
+//		if ( ApuC1Freq ) {
+//			//ApuC1Skip = ( ApuPulseMagic << 1 ) / ApuC1Freq;
+//			ApuC1Skip = ApuPulseMagic / (ApuC1Freq >>1);
+//		}
+    }
+	Apu_phaseacc_2 -= (ApuCycleRate);
+	if(Apu_phaseacc_2 >= 0)
+	{
+		//wave_buffers[0][i] = Apu_output_vol1;
+		
+		goto NEXT;
+	}
+	
+	//debg("3");
+	//modify
+#ifdef APU_OVERSAMPLE
+	num_times = total = 0;
+	if(ApuC1Env)
+	{
+		output = (DWORD)ApuC2Vol<<8;
+	}
+	else
+	{
+		output =((DWORD)ApuC2EnvVol^0x0f)<<8;
+	}
+#endif	
+	while(Apu_phaseacc_2<0)
+	{
+		Apu_phaseacc_2 += APU_TO_FIXED(ApuC2Freq+1);
+		Apu_adder_2 = (Apu_adder_2+1)&0x0F;
+		
+#ifdef APU_OVERSAMPLE  
+		if (Apu_adder_2 < Apu_duty_flip_2)
+			 total += output;
+		  else
+			 total -= output;
+
+		  num_times++;
+#endif
+	}
+#ifdef APU_OVERSAMPLE 
+	Apu_output_vol2 = total / num_times;
+#else
+	if ( ApuC2Env ) 
+		output = (DWORD)ApuC2Vol << 8;
+	else
+		output =((DWORD)ApuC2EnvVol^0x0f)<<8;
+	if(0 == Apu_adder_2 )
+		Apu_output_vol2 = output;
+	else if(Apu_adder_2 == Apu_duty_flip_2)
+		Apu_output_vol2 -= output;
+	
+
+	
+#endif
+NEXT:	
+	if (Apu_output_vol2 > 0x7FFF) {wave_buffers->buffer[1][i] = 0x7FFF;}
+	else if (Apu_output_vol2 < -0x8000) {wave_buffers->buffer[1][i] = -0x8000;}
+	else	 wave_buffers->buffer[1][i]  = (DWORD)Apu_output_vol2;	
+	soundBuff[i] += wave_buffers->buffer[1][i];
+	
+  }		
+
+}
+/*===================================================================*/
+/*                                                                   */
+/*      ApuRenderingWave3() : Rendering Triangle Wave                */
+/*                                                                   */
+/*===================================================================*/
+
+/*-------------------------------------------------------------------*/
+/* Write registers of triangle wave #3                              */
+/*-------------------------------------------------------------------*/
+
+//int ApuWriteWave3( int cycles, int event )
+//{
+//  /* APU Reg Write Event */
+//	while (( event < cur_event ) && ( ApuEventQueue[event].time < cycles ) ) 
+//	{
+//		if ( ( ApuEventQueue[event].type & APUET_MASK ) == APUET_C3 ) 
+//		{
+//			switch ( ApuEventQueue[event].type & 3 ) 
+//			{
+//				case 0:
+//					ApuC3a = ApuEventQueue[event].data;
+//					if((0 == ApuC3CounterStarted)&&(ApuC3Atl))
+//					ApuC3Llc = trilength_lut[ApuC3a&0x7f];				
+//					break;
+//
+//				case 1:
+//					ApuC3b = ApuEventQueue[event].data;
+//					
+//				break;
+//
+//				case 2:
+//					ApuC3c = ApuEventQueue[event].data;
+//					if ( ApuC3Freq ) 
+//					{
+//						ApuC3Skip = ApuTriangleMagic / ApuC3Freq;
+//					} else {
+//						ApuC3Skip = 0;  
+//					}
+//				break;
+//
+//				case 3:
+//					ApuC3d = ApuEventQueue[event].data;
+//					ApuC3Atl= vbl_lut[( ApuC3d & 0xf8) >> 3];
+//					ApuC3CounterStarted = 0;
+//					ApuC3WriteLatency = 228/APU_FROM_FIXED(ApuCycleRate);
+//					ApuC3Llc = trilength_lut[ApuC3a&0x7F];
+//				
+//			}
+//		} else if ( ApuEventQueue[event].type == APUET_W_CTRL ) {
+//			ApuCtrlNew = ApuEventQueue[event].data;
+//
+//			if( !(ApuEventQueue[event].data&(1<<2)) ) {
+//				ApuC3Atl = 0;
+//				ApuC3Llc = 0;
+//			}
+//		}
+//    event++;
+//  }
+//  return event;
+//}
+//
+///*-------------------------------------------------------------------*/
+///* Rendering triangle wave #3                                        */
+///*-------------------------------------------------------------------*/
+//void ApuRenderingWave3_improve( void )
+//{
+//	int cycles = 0;
+//	int event = 0;
+//	int output  = 0;   
+//	/* note: 41 CPU cycles occur between increments of i */
+//	ApuCtrlNew = ApuCtrl;
+//	unsigned int i;
+//    for ( i = 0; i < ApuSamplesPerSync; i++) 
+//	{
+//		/* Write registers */
+//		cycles += APU_FROM_FIXED(ApuCycleRate);//ApuCyclesPerSample;  ApuCycleRate
+//		event = ApuWriteWave3( cycles, event );
+//		APU_VOLUME_DECAY(Apu_output_vol3);
+//		if(0==ApuC3Atl)
+//		{
+//			goto NEXT;
+//		}
+//		if(ApuC3CounterStarted)
+//		{
+//			if(ApuC3Llc>0)
+//				ApuC3Llc--;
+//			if ( ApuC3Atl > 0 && !ApuC3Holdnote ) 
+//				ApuC3Atl--;
+//		}
+//		else if(!ApuC3Holdnote && ApuC3WriteLatency>0)
+//		{
+//			if ( --ApuC3WriteLatency == 0 )
+//			{
+//				ApuC3CounterStarted = 0x01;
+//			}
+//		}
+//		if(0 == ApuC3Llc||(ApuC3Freq+1)<4)
+//		{
+//			goto NEXT;
+//		}
+//		Apu_phaseacc_3 -= ApuCycleRate;
+//		while(Apu_phaseacc_3 < 0)
+//		{
+//			Apu_phaseacc_3 += APU_TO_FIXED(ApuC3Freq+1);
+//			Apu_adder_3 = (Apu_adder_3 +1) &0x1F;
+//			if(Apu_adder_3&0x10)
+//				Apu_output_vol3 -= (2<<8);
+//			else
+//				Apu_output_vol3 += (2<<8);
+//		}
+//NEXT: 	
+//		output = Apu_output_vol3+ (Apu_output_vol3>>2);
+//		if (output > 0x7FFF) {wave_buffers[2][i] = 0x7FFF;}
+//		else if (output < -0x8000) {wave_buffers[2][i] = -0x8000;}
+//		else	 wave_buffers[2][i]  = (DWORD)output;
+//		soundBuff[i] += wave_buffers[2][i];	
+//	}
+//}
+///*===================================================================*/
+///*                                                                   */
+///*      ApuRenderingWave4() : Rendering Noise                        */
+///*                                                                   */
+///*===================================================================*/
+//
+///*-------------------------------------------------------------------*/
+///* Write registers of noise channel #4                              */
+///*-------------------------------------------------------------------*/
+//
+//int ApuWriteWave4( int cycles, int event )
+//{
+//  /* APU Reg Write Event */
+//	while ( (event < cur_event) && (ApuEventQueue[event].time < cycles) ) 
+//	{
+//		if ( ( ApuEventQueue[event].type & APUET_MASK ) == APUET_C4 ) 
+//		{
+//			switch (ApuEventQueue[event].type & 3) {
+//				case 0:
+//					ApuC4a = ApuEventQueue[event].data;
+//					Apu_env_delay_4 = decay_lut[ApuC4a&0x0F];
+//					
+//					break;
+//
+//				case 1:
+//					ApuC4b = ApuEventQueue[event].data;
+//					break;
+//
+//				case 2:
+//					ApuC4c = ApuEventQueue[event].data;
+//				
+//					if ( ApuC4Small ) {
+//						ApuC4Sr = 0x001f;
+//					} else {
+//						ApuC4Sr = 0x01ff;
+//					}
+//
+//					/* Frequency */ 
+//					if ( ApuC4Freq ) {
+//						ApuC4Skip = ApuNoiseMagic / ApuC4Freq;
+//					} else {
+//						ApuC4Skip = 0;
+//					}
+//					ApuC4Atl = ApuC4LengthCounter;
+//					
+//				#ifdef REALTIME_NOISE
+//					Apu_noise_xor_tap = (ApuC4c & 0x80) ? 0x40: 0x02;
+//				#else /* !REALTIME_NOISE */
+//				/* detect transition from long->short sample */
+//					if ((ApuC4c & 0x80) && FALSE == Apu_noise_short_sample)
+//					{
+//						/* recalculate short noise buffer */
+//						shift_register15(noise_short_lut, APU_NOISE_93);
+//						Apu_noise_cur_pos = 0;
+//					}
+//					Apu_noise_short_sample = (value & 0x80) ? TRUE : FALSE;
+//				#endif /* !REALTIME_NOISE */
+//					break;
+//
+//				case 3:
+//					ApuC4d = ApuEventQueue[event].data;
+//
+//				/* Frequency */ 
+//					if ( ApuC4Freq ) {
+//						ApuC4Skip = ApuNoiseMagic / ApuC4Freq;
+//					} else {
+//						ApuC4Skip = 0;
+//					}
+//					ApuC4Atl = vbl_lut[ApuC4d>>3];
+//					ApuC4EnvVol = 0;	
+//					break;
+//			}
+//		} else if (ApuEventQueue[event].type == APUET_W_CTRL) {
+//			ApuCtrlNew = ApuEventQueue[event].data;
+//
+//			if( !(ApuEventQueue[event].data&(1<<3)) ) {
+//				ApuC4Atl = 0;
+//			}
+//		} 
+//		event++;
+//	}
+//	return event;
+//}
+//
+///*-------------------------------------------------------------------*/
+///* Rendering noise channel #4                                        */
+///*-------------------------------------------------------------------*/
+///* WHITE NOISE CHANNEL
+//** ===================
+//** reg0: 0-3=volume, 4=envelope, 5=hold
+//** reg2: 7=small(93 byte) sample,3-0=freq lookup
+//** reg3: 7-4=vbl length counter
+//*/
+//void ApuRenderingWave4_improve(void)
+//{
+//	int cycles = 0;
+//	int event  = 0;
+//	int outvol = 0;
+//#if defined(APU_OVERSAMPLE) && defined(REALTIME_NOISE)
+//#else /* !(APU_OVERSAMPLE && REALTIME_NOISE) */
+//   int noise_bit;
+//#endif /* !(APU_OVERSAMPLE && REALTIME_NOISE) */
+//#ifdef APU_OVERSAMPLE
+//   int num_times;
+//   int total;
+//#endif /* APU_OVERSAMPLE */
+//	ApuCtrlNew = ApuCtrl;
+//	unsigned int i;
+//    for ( i = 0; i < ApuSamplesPerSync; i++ ) 
+//	{
+//		/* Write registers */
+//		cycles += APU_FROM_FIXED(ApuCycleRate);//ApuCyclesPerSample;  ApuCycleRate
+//		event = ApuWriteWave4( cycles, event );
+//		APU_VOLUME_DECAY(Apu_output_vol4);
+//		if(0 == ApuC4Atl)
+//		{
+//			goto NEXT;
+//		}
+//		if(!ApuC4Hold)
+//		{
+//			ApuC4Atl--;
+//		}
+//		
+//		/* Envelope decay at a rate of ( Envelope Delay + 1 ) / 240 secs */
+//		ApuC4EnvPhase -= 4;
+//		while( ApuC4EnvPhase<0 )
+//		{
+//			ApuC4EnvPhase += Apu_env_delay_4;
+//			if( ApuC4Hold )
+//			{
+//				 ApuC4EnvVol = ( ApuC4EnvVol + 1 ) & 0x0f;
+//			}
+//			else if ( ApuC4EnvVol < 0x0f )
+//			{
+//				ApuC4EnvVol++;
+//			}
+//		}
+//		Apu_phaseacc_4 -= (ApuCycleRate);
+//		if( Apu_phaseacc_4 >= 0)
+//		{
+//			goto NEXT;
+//		}
+//	#ifdef APU_OVERSAMPLE
+//		num_times = total = 0;
+//
+//		if ( ApuC4Env )
+//			outvol = ApuC4Vol << 8; /* fixed volume */
+//		else
+//			outvol = (ApuC4EnvVol ^ 0x0F) << 8;
+//	#endif /* APU_OVERSAMPLE */
+//	
+//		while (Apu_phaseacc_4 < 0)
+//		{
+//      
+//			if( ApuC4Freq == 0 )break;//*******我加的*****************这个游戏是0/////////////////////////
+//			Apu_phaseacc_4 += APU_TO_FIXED(ApuC4Freq);
+//
+//		#ifdef REALTIME_NOISE
+//
+//			#ifdef APU_OVERSAMPLE
+//			if (shift_register15(Apu_noise_xor_tap))
+//				total += outvol;
+//			else
+//				total -= outvol;
+//
+//			num_times++;
+//			#else /* !APU_OVERSAMPLE */
+//			noise_bit = shift_register15(Apu_noise_xor_tap);
+//			#endif /* !APU_OVERSAMPLE */
+//
+//		#else /* !REALTIME_NOISE */
+//			Apu_noise_cur_pos++;
+//
+//			if (Apu_noise_short_sample)
+//			{
+//				if (APU_NOISE_93 == Apu_noise_cur_pos)
+//					Apu_noise_cur_pos = 0;
+//			}
+//			else
+//			{
+//				if (APU_NOISE_32K == Apu_noise_cur_pos)
+//					Apu_noise_cur_pos = 0;
+//			}
+//
+//			#ifdef APU_OVERSAMPLE
+//			if (Apu_noise_short_sample)
+//				noise_bit = noise_short_lut[Apu_noise_cur_pos];
+//			else
+//				noise_bit = noise_long_lut[Apu_noise_cur_pos];
+//
+//			if (noise_bit)
+//				total += outvol;
+//			else
+//				total -= outvol;
+//
+//			num_times++;
+//			#endif /* APU_OVERSAMPLE */
+//		#endif /* !REALTIME_NOISE */
+//		}
+//
+//#ifdef APU_OVERSAMPLE
+//		Apu_output_vol4 = total / num_times;
+//#else /* !APU_OVERSAMPLE */
+//		if (ApuC4Env)
+//			outvol = ApuC4Vol << 8; /* fixed volume */
+//		else
+//			outvol = (ApuC4EnvVol ^ 0x0F) << 8;
+//
+//	#ifndef REALTIME_NOISE
+//		if (Apu_noise_short_sample)
+//			noise_bit = noise_short_lut[Apu_noise_cur_pos];
+//		else
+//			noise_bit = noise_long_lut[Apu_noise_cur_pos];
+//	#endif /* !REALTIME_NOISE */
+//
+//		if (noise_bit)
+//			Apu_output_vol4 = outvol;
+//		else
+//			Apu_output_vol4 = -outvol;
+//#endif /* !APU_OVERSAMPLE */
+//NEXT:
+//		outvol = (Apu_output_vol4 + Apu_output_vol4 + Apu_output_vol4)>>2;
+//		if (outvol > 0x7FFF) {wave_buffers[3][i] = 0x7FFF;}
+//		else if (outvol < -0x8000) {wave_buffers[3][i] = -0x8000;}
+//		else	 wave_buffers[3][i]  = (DWORD)outvol;
+//		soundBuff[i] += wave_buffers[3][i];
+//	}
+// 
+//}
+//
+///*===================================================================*/
+///*                                                                   */
+///*      ApuRenderingWave5() : Rendering DPCM channel #5              */
+///*                                                                   */
+///*===================================================================*/
+//
+///*-------------------------------------------------------------------*/
+///* Write registers of DPCM channel #5                               */
+///*-------------------------------------------------------------------*/
+//
+//int ApuWriteWave5( int cycles, int event )
+//{
+//	/* APU Reg Write Event */
+//	while ( (event < cur_event) && (ApuEventQueue[event].time < cycles) ) 
+//	{
+//		if ( ( ApuEventQueue[event].type & APUET_MASK ) == APUET_C5 ) 
+//		{
+//			ApuC5Reg[ ApuEventQueue[event].type & 3 ] = ApuEventQueue[event].data;
+//
+//			switch (ApuEventQueue[event].type & 3) {
+//				case 0:
+//					ApuC5Freq    = ApuDpcmCycles[ ( ApuEventQueue[event].data & 0x0F ) ] << 16;
+//					ApuC5Looping = ApuEventQueue[event].data & 0x40;
+//					if(ApuC5Reg[0]&0x80)
+//						ApyC5_irq_gen = 1;
+//					else
+//					{
+//						ApyC5_irq_gen = 0;
+//						ApyC5_irq_occurred = 0;
+//						
+//					}
+//					break;
+//				case 1:
+//					
+//					Apu_output_vol5 += ((ApuC5Reg[1]&0x7F) - ApuC5DpcmValue)<<8;
+//					ApuC5DpcmValue = ( ApuEventQueue[event].data & 0x7F );
+//					break;
+//				case 2:
+//					ApuC5CacheAddr = 0xC000 + (WORD)( ApuEventQueue[event].data << 6 );
+//					break;
+//				case 3:
+//					ApuC5CacheDmaLength = ( ( ApuEventQueue[event].data << 4 ) + 1 ) << 3;
+//					break;
+//			}
+//		} else if (ApuEventQueue[event].type == APUET_W_CTRL) {
+//			ApuCtrlNew = ApuEventQueue[event].data;
+//
+//			if( !(ApuEventQueue[event].data&(1<<4)) ) {
+//				ApuC5Enable    = 0;
+//				ApuC5DmaLength = 0;
+//			} else {
+//				ApuC5Enable = 0xFF;
+//				if( !ApuC5DmaLength ) {
+//					ApuC5Address   = ApuC5CacheAddr;
+//					ApuC5DmaLength = ApuC5CacheDmaLength;
+//				}
+//			}
+//	}
+//    event++;
+//  }
+//  return event;
+//}
+//
+///*-------------------------------------------------------------------*/
+///* Rendering DPCM channel #5                                         */
+///*-------------------------------------------------------------------*/
+//void ApuRenderingWave5_improve(void)
+//{
+//	int cycles = 0;
+//	int event = 0;
+//	int delta_bit;
+//	int output = 0;
+//	ApuCtrlNew = ApuCtrl;
+//	unsigned int i;
+//    for ( i = 0; i < ApuSamplesPerSync; i++ ) 
+//	{
+//		/* Write registers */
+//		cycles += APU_FROM_FIXED(ApuCycleRate);//ApuCyclesPerSample;  ApuCycleRate
+//		event = ApuWriteWave5( cycles, event );
+//		APU_VOLUME_DECAY(Apu_output_vol5);
+//		
+//		if( ApuC5DmaLength ) 
+//		{
+//			ApuC5Phaseacc -= ApuCycleRate;
+//			while( ApuC5Phaseacc < 0 ) 
+//			{
+//				ApuC5Phaseacc += ApuC5Freq;
+//				delta_bit = (ApuC5DmaLength&7)^7;
+//				if(7==delta_bit)
+//				{
+//					ApuC5CurByte = K6502_Read( ApuC5Address );
+//					g_wPassedClocks++;/* steal a cycle from CPU偷从CPU周期*/
+//					if( 0xFFFF == ApuC5Address )
+//						ApuC5Address = 0x8000;
+//					else
+//						ApuC5Address++;
+//				}
+//	
+//				if( !(--ApuC5DmaLength) ) {
+//					if( ApuC5Looping ) {
+//						ApuC5Address = ApuC5CacheAddr;
+//						ApuC5DmaLength = ApuC5CacheDmaLength;
+//					} else {
+//						if(ApyC5_irq_gen)
+//						{
+//							ApyC5_irq_occurred = 1;
+//						}
+//						ApuC5Enable = 0;
+//						break;
+//					}
+//				}
+//
+//				// positive delta
+//				if( ApuC5CurByte & ( 1 << delta_bit) ) {
+//					if( ApuC5DpcmValue < 0x7D )
+//						ApuC5DpcmValue += 2;
+//						Apu_output_vol5 += (2<<8);
+//				} else {
+//					// negative delta
+//					if( ApuC5DpcmValue > 1 )
+//						ApuC5DpcmValue -= 2;
+//						Apu_output_vol5 -= (2<<8);
+//				}
+//			}
+//		}
+//		output = (Apu_output_vol5 + Apu_output_vol5 + Apu_output_vol5)>>2;
+//		if (output > 0x7FFF) {wave_buffers[4][i] = 0x7FFF;}
+//		else if (output < -0x8000) {wave_buffers[4][i] = -0x8000;}
+//		else	 wave_buffers[4][i]  = (DWORD)output;
+//		soundBuff[i] += wave_buffers[4][i];
+//
+//  }
+//}
+/*===================================================================*/
+/*                                                                   */
+/*     InfoNES_pApuVsync() : Callback Function per Vsync             */
+/*                                                                   */
+/*===================================================================*/
+
+
+ 
+__nes_code void InfoNES_pAPU_dacISR(int flag)
+{
+
+	if(flag & DAC_INT_PEND)  //full pend
+	{
+		hal_dacFlush(pAPU_dec_op.pAPU_Framelen*FRAME_COMBINE);
+		//hal_dacFlush(pAPU_dec_op.pAPU_Framelen*FRAME_COMBINE);
+		
+		if((pAPU_dec_op.drop_flag == 0)&&(pAPU_dec_op.nextFrame))
+		{
+			
+			
+			hal_streamfree(&pAPU_dec_op.pAPU);
+		}
+		
+		//pAPU_dec_op.lastFrame = pAPU_dec_op.curFrame;
+		pAPU_dec_op.curFrame = pAPU_dec_op.nextFrame;
+		pAPU_dec_op.nextFrame = 0;
+	}
+	//	if(videoPCtrl.prepause)
+//	{
+//		if((flag&DAC_INT_EMPTY)==0)
+//			return ;
+//		if(videoPCtrl.curframe)
+//			XMsgQPost(videoPCtrl.audsIdleQ,(MSG_T *)videoPCtrl.curframe);
+//		videoPCtrl.curframe = 0;
+//		hal_dacPlayStop();
+//	    videoPCtrl.dacstat = 0;
+//	    videoPCtrl.stat = MEDIA_STAT_PAUSE;
+//	    hal_sdUnlock();
+//		return ;
+//	}
+//	
+	if(flag & DAC_INT_HALF)  //half int
+	{
+		if(pAPU_dec_op.nextFrame==0)
+		{
+			pAPU_dec_op.nextFrame = InfoNes_pAPU_StreamOut();
+			if(pAPU_dec_op.nextFrame)
+			{
+				hal_dacSetBuffer((INT32U)pAPU_dec_op.nextFrame,pAPU_dec_op.pAPU_Framelen*FRAME_COMBINE);
+				pAPU_dec_op.drop_flag = 0;
+				//debg("-");
+
+			}
+			else
+			{
+				//deg_Printf("nextframe = 0 \n");
+			}
+		
+		}
+		
+	}
+	else if(flag&DAC_INT_EMPTY)
+	{
+		//if(videoPCtrl.dacstat == 3)
+		{
+			//deg_Printf("buf empty\n");
+			hal_dacPlayStop();
+			pAPU_dec_op.dac_sta = 0;
+			//hal_mp3_dac_memUinit();
+		}
+
+	}
+}
+
+__nes_code void InfoNES_pAPUVsync(void)
+{
+	
+	//u32 lastTime;
+	//lastTime=XOSTimeGet();
+	if(!NesStatFlag)
+		return;
+	
+	pAPU_dec_op.timer_sync +=16;
+	
+	if(pAPU_dec_op.sync>=((pAPU_dec_op.timer_sync/500)*30 + (pAPU_dec_op.timer_sync%500)/16))
+		return;
+
+	//debg("+");
+    static int prev_sample = 0;
+    int next_sample;
+	if(pAPU_dec_op.sync_combine_cnt == 0)
+	{
+		pAPU_dec_op.curBuffer = (u8*)hal_streamMalloc(&pAPU_dec_op.pAPU, pAPU_dec_op.pAPU_Framelen*FRAME_COMBINE);
+		if(pAPU_dec_op.curBuffer == NULL)
+		{
+			debg("pAPU drop\n");
+			return;
+		}
+	}
+	soundBuff = (WORD*)(pAPU_dec_op.curBuffer + pAPU_dec_op.pAPU_Framelen * pAPU_dec_op.sync_combine_cnt);
+	pAPU_dec_op.sync_combine_cnt++;
+
+	
+	ApuRenderingWave1_improve();
+	ApuRenderingWave2_improve();
+	//ApuRenderingWave3_improve();
+	//ApuRenderingWave4_improve();
+	//ApuRenderingWave5_improve();
+	ApuCtrl = ApuCtrlNew;
+
+
+
+	pAPU_dec_op.sync++;
+	pAPU_dec_op.sync_next++;
+	if(pAPU_dec_op.sync_combine_cnt >= FRAME_COMBINE )
+	{
+		pAPU_dec_op.sync_combine_cnt = 0;
+		
+		//debg("[%d]",pAPU_dec_op.sync);
+		//ax32xx_sysDcacheWback_sdr((u32)pAPU_dec_op.curBuffer,pAPU_dec_op.pAPU_Framelen*FRAME_COMBINE);
+		ax32xx_sysDcacheWback((u32)pAPU_dec_op.curBuffer,pAPU_dec_op.pAPU_Framelen*FRAME_COMBINE);
+		hal_streamIn(&pAPU_dec_op.pAPU,(u32)pAPU_dec_op.curBuffer,pAPU_dec_op.pAPU_Framelen*FRAME_COMBINE,pAPU_dec_op.sync,pAPU_dec_op.sync_next);
+		if(pAPU_dec_op.dac_sta == 0)
+		{
+			if(pAPU_dec_op.sync >= 2)
+			{
+				pAPU_dec_op.curFrame = InfoNes_pAPU_StreamOut();
+				if(pAPU_dec_op.curFrame)
+				{
+					hal_dacCallBackRegister(InfoNES_pAPU_dacISR);
+					
+					debg("pAPU_dacPlayStart:....\n");
+					if(hal_dacPlayStart(pAPU_dec_op.pAPU_SampleRate,(INT32U)pAPU_dec_op.curFrame,pAPU_dec_op.pAPU_Framelen*FRAME_COMBINE)<0)
+					{
+						deg_Printf("pAPU_dacPlayStart fail\n");
+						return;
+					}
+					
+					pAPU_dec_op.dac_sta = 1;
+					pAPU_dec_op.nextFrame = NULL;
+				}
+			}
+		}
+	}
+
+
+	
+	entertime = g_wPassedClocks;
+	cur_event = 0;
+	//debg("-");
+}
+
+/*===================================================================*/
+/*                                                                   */
+/*            InfoNES_pApuInit() : Initialize pApu                   */
+/*                                                                   */
+/*===================================================================*/
+void apu_build_luts(int num_samples)
+{
+   int i;
+
+   /* lut used for enveloping and frequency sweeps */
+   for (i = 0; i < 16; i++)
+      decay_lut[i] = num_samples * (i + 1);
+
+   /* used for note length, based on vblanks and size of audio buffer */
+   for (i = 0; i < 32; i++)
+      vbl_lut[i] = ApuAtl[i] * num_samples;
+
+   /* triangle wave channel's linear length table */
+   for (i = 0; i < 128; i++)
+      trilength_lut[i] = (int) ( (i * num_samples)>>2);
+
+#ifndef REALTIME_NOISE
+   /* generate noise samples */
+   shift_register15(noise_long_lut, APU_NOISE_32K);
+   shift_register15(noise_short_lut, APU_NOISE_93);
+#endif /* !REALTIME_NOISE */
+}
+
+
+void InfoNES_pAPUInit(void)
+{
+  /* Sound Hardware Init */
+  InfoNES_SoundInit();
+  
+  
+
+  if(wave_buffers)
+		hal_sysMemFree(wave_buffers);
+   wave_buffers = hal_sysMemMalloc(sizeof(WAV_BUFFER_T),32);
+   if(wave_buffers == NULL)
+   {
+		deg_Printf("nes wave_buffers malloc fail\n");
+		return -1;
+   }
+  
+  ApuQuality = pAPU_QUALITY - 1;            // 1: 22050, 2: 44100 [samples/sec]
+
+  ApuPulseMagic      = ApuQual[ ApuQuality ].pulse_magic;
+  ApuTriangleMagic   = ApuQual[ ApuQuality ].triangle_magic;
+  ApuNoiseMagic      = ApuQual[ ApuQuality ].noise_magic;
+  ApuSamplesPerSync  = ApuQual[ ApuQuality ].samples_per_sync;
+  ApuCyclesPerSample = ApuQual[ ApuQuality ].cycles_per_sample;
+  ApuSampleRate      = ApuQual[ ApuQuality ].sample_rate;
+#if APU_VOLUME_IMPROVE == 0
+  ApuCycleRate       = ApuQual[ ApuQuality ].cycle_rate;
+#else
+  //ApuCycleRate 		 = (int) (APU_BASEFREQ * 65536.0 / (float) ApuSampleRate);
+  ApuCycleRate = ApuPulseMagic>>8;
+#endif 
+  InfoNES_SoundOpen( ApuSamplesPerSync, ApuSampleRate );
+  debg("ApuSamplesPerSync:%d, ApuCyclesPerSample:%d\n",ApuSamplesPerSync, ApuCyclesPerSample);
+  debg("ApuSampleRate:%d,ApuCycleRate:%d\n",ApuSampleRate,ApuCycleRate);
+  /*-------------------------------------------------------------------*/
+  /* Initialize Rectangular, Noise Wave's Regs                         */
+  /*-------------------------------------------------------------------*/
+  ApuCtrl = ApuCtrlNew = 0;
+//  ApuC1Wave = pulse_50;
+//  ApuC2Wave = pulse_50;
+
+  ApuC1a = ApuC1b = ApuC1c = ApuC1d = 0;
+  ApuC2a = ApuC2b = ApuC2c = ApuC2d = 0;
+  ApuC4a = ApuC4b = ApuC4c = ApuC4d = 0;
+
+  ApuC1Skip = ApuC2Skip = ApuC4Skip = 0;
+  ApuC1Index = ApuC2Index = ApuC4Index = 0;
+  ApuC1EnvPhase = ApuC2EnvPhase = ApuC4EnvPhase = 0;
+  ApuC1EnvVol = ApuC2EnvVol = ApuC4EnvVol = 0;
+  ApuC1Atl = ApuC2Atl = ApuC4Atl = 0;
+  ApuC1SweepPhase = ApuC2SweepPhase = 0;
+  ApuC1Freq = ApuC2Freq = ApuC4Freq = 0;
+  ApuC4Sr = ApuC4Fdc = 0;
+
+  Apu_output_vol1 = Apu_output_vol2 = Apu_output_vol3= Apu_output_vol4 =Apu_output_vol5 = 0;
+ 
+  Apu_phaseacc_1 = Apu_phaseacc_2 = Apu_phaseacc_3 = Apu_phaseacc_4 = 0;
+  Apu_adder_1 = Apu_adder_2 = Apu_adder_3 = Apu_adder_4  = 0;
+  Apu_duty_flip_1 = Apu_duty_flip_2 = 0;
+  /*-------------------------------------------------------------------*/
+  /*   Initialize Triangle Wave's Regs                                 */
+  /*-------------------------------------------------------------------*/
+  ApuC3a = ApuC3b = ApuC3c = ApuC3d = 0;
+  ApuC3Atl = ApuC3Llc = 0;
+  ApuC3WriteLatency = 3;                           /* Magic Number */
+  ApuC3CounterStarted = 0x00;
+
+  /*-------------------------------------------------------------------*/
+  /*   Initialize DPCM's Regs                                          */
+  /*-------------------------------------------------------------------*/
+  ApuC5Reg[0] = ApuC5Reg[1] = ApuC5Reg[2] = ApuC5Reg[3] = 0;
+  ApuC5Enable = ApuC5Looping = ApuC5CurByte = ApuC5DpcmValue = 0;
+  ApuC5Freq = ApuC5Phaseacc;
+  ApuC5Address = ApuC5CacheAddr = 0;
+  ApuC5DmaLength = ApuC5CacheDmaLength = 0;
+
+  /*-------------------------------------------------------------------*/
+  /*   Initialize Wave Buffers                                         */
+  /*-------------------------------------------------------------------*/
+  InfoNES_MemorySet( (void *)wave_buffers->buffer[0], 0, 735 );  
+  InfoNES_MemorySet( (void *)wave_buffers->buffer[1], 0, 735 );  
+  InfoNES_MemorySet( (void *)wave_buffers->buffer[2], 0, 735 );  
+  InfoNES_MemorySet( (void *)wave_buffers->buffer[3], 0, 735 );  
+  InfoNES_MemorySet( (void *)wave_buffers->buffer[4], 0, 735 );  
+  apu_build_luts(ApuSamplesPerSync);
+  entertime = g_wPassedClocks;
+  cur_event = 0;
+}
+
+/*===================================================================*/
+/*                                                                   */
+/*            InfoNES_pApuDone() : Finalize pApu                     */
+/*                                                                   */
+/*===================================================================*/
+
+void InfoNES_pAPUDone(void)
+{
+  if(wave_buffers)
+	hal_sysMemFree(wave_buffers);
+  wave_buffers = NULL;	
+  InfoNES_SoundClose();
+}
+
+/*
+ * End of InfoNES_pAPU.cpp
+ */
