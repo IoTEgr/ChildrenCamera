@@ -3940,25 +3940,20 @@ LOAD C:/MinGW-4.7.1/lib/gcc/or1k-elf/4.9.1/no-delay\libgcc.a
  *(.before_load.entry)
  *(.before_load)
 
-.lcd_resource   0x00000000      0x6bc load address 0x00088a00
+.lcd_resource   0x00000000       0x38 load address 0x00088a00
  *(.lcd_res.header)
  .lcd_res.header
                 0x00000000       0x38 ./Debug/tft_lcd_tft_lcd.c.o
                 0x00000000                lcdheader
                 0x00000038                _res_lcd_struct_start = .
  *(.lcd_res.struct)
- .lcd_res.struct
-                0x00000038      0x24c ./Debug/tft_lcd_lcd_mcu_nv3030b.c.o
-                0x00000038                nv3030b
-                0x00000284                _res_lcd_struct_end = .
+                0x00000038                _res_lcd_struct_end = .
  *(.lcd_res.init_tab)
- .lcd_res.init_tab
-                0x00000284      0x438 ./Debug/tft_lcd_lcd_mcu_nv3030b.c.o
  *(.lcd_res.gamma_tab)
  *(.lcd_res.contra_tab)
 
 .sensor_resource
-                0x00000000      0xb38 load address 0x000890bc
+                0x00000000      0xb38 load address 0x00088a38
  *(.sensor_res.header)
  .sensor_res.header
                 0x00000000       0x40 ./Debug/cmos_sensor_cmos_sensor.c.o
@@ -4005,7 +4000,7 @@ LOAD C:/MinGW-4.7.1/lib/gcc/or1k-elf/4.9.1/no-delay\libgcc.a
  .sensor_res.init_tab
                 0x000009a0      0x198 ./Debug/cmos_sensor_SENSOR_SIV100B.c.o
 
-.eh_frame       0x00000b38     0xf300 load address 0x00089bf4
+.eh_frame       0x00000b38     0xf300 load address 0x00089570
  *(.eh_frame)
  .eh_frame      0x00000b38       0xa8 ./Debug/main.c.o
  .eh_frame      0x00000be0      0x434 ./Debug/resource_manager.c.o
@@ -4371,13 +4366,13 @@ LOAD C:/MinGW-4.7.1/lib/gcc/or1k-elf/4.9.1/no-delay\libgcc.a
                 0x00000001                ASSERT ((((ORIGIN (sdram) + 0x200000) - _sdram_remian_addr) >= __stack_size), No memroy for stack)
                 0x021fec00                __bss_end = (_sdram_remian_addr + __sdram_remain_size)
                 0x00088a00                _lcd_resource_start_addr = LOADADDR (.lcd_resource)
-                0x0000024c                _lcd_resource_size = (_res_lcd_struct_end - _res_lcd_struct_start)
-                0x000890bc                _sensor_resource_start_addr = LOADADDR (.sensor_resource)
+                0x00000000                _lcd_resource_size = (_res_lcd_struct_end - _res_lcd_struct_start)
+                0x00088a38                _sensor_resource_start_addr = LOADADDR (.sensor_resource)
                 0x00000168                _res_sensor_header_len = (_res_sensor_header_item_end - _res_sensor_header_item_start)
                 0x021ffffc                PROVIDE (__stack, ((ORIGIN (sdram) + 0x200000) - 0x4))
 OUTPUT(./Debug/ax329x_sdk.elf elf32-or1k)
 
-.rela.dyn       0x0000fe38        0x0 load address 0x00098ef4
+.rela.dyn       0x0000fe38        0x0 load address 0x00098870
  .rela.vector   0x00000000        0x0 ./Debug/ax32xx_reset.S.o
  .rela.bootsec  0x00000000        0x0 ./Debug/ax32xx_reset.S.o
  .rela.text     0x00000000        0x0 ./Debug/ax32xx_reset.S.o
