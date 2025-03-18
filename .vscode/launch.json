@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug with GDB",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/ax32_platform_demo/Debug/ax329x_sdk.elf",  // 替换为实际生成的 ELF 文件路径
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:/MinGW-4.7.1/bin/or1k-elf-gdb.exe",  // 图片中的 GDB 路径
+            "setupCommands": [
+                {
+                    "description": "启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

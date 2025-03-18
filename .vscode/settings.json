@@ -27,5 +27,24 @@
         "*.dbclient-js": "javascript",
         "application.h": "c",
         "userinterface.h": "c"
-    }
+    },
+    // C/C++ 编译器配置
+    "C_Cpp.default.compilerPath": "C:/MinGW-4.7.1/bin/or1k-elf-gcc.exe",
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.default.includePath": [
+        "C:/MinGW-4.7.1/bin"  // 替换为实际头文件路径（如包含 .h 文件的目录）
+    ],
+    "C_Cpp.default.defines": ["loTEgr", "OR1KNEWCPU"],  // 图片中的 -D 宏定义
+    "C_Cpp.default.compilerArgs": ["-mno-delay-w"],     // 图片中的编译选项
+
+    // Makefile 工具链配置
+    // "makefile.makeCommand": "C:/MinGW-4.7.1/bin/mingw32-make.exe",
+    // "makefile.gcc.path": "C:/MinGW-4.7.1/bin/or1k-elf-gcc.exe",
+    // "makefile.gdb.path": "C:/MinGW-4.7.1/bin/or1k-elf-gdb.exe",
+    // "makefile.asmPath": "C:/MinGW-4.7.1/bin/or1k-elf-as.exe",
+    // "makefile.ldPath": "C:/MinGW-4.7.1/bin/or1k-elf-ld.exe",
+    // "makefile.arPath": "C:/MinGW-4.7.1/bin/or1k-elf-ar.exe",
+    // "makefile.windresPath": "C:/MinGW-4.7.1/bin/windres.exe"
 }

@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Project",
+            "type": "shell",
+            "command": "C:/MinGW-4.7.1/bin/mingw32-make.exe",
+            "args": ["-j28", "-f", "Makefile"],  // 根据实际 Makefile 名称调整
+            "options": {
+                "cwd": "${workspaceFolder}/ax32_platform_demo"  // 指定 Makefile 所在目录
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$gcc"
+        }
+    ]
+}
